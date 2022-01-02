@@ -1,0 +1,49 @@
+{
+  "preset": "large",
+  "fields_config": {
+    "num_docs_per_store": 2,
+    "fields": {
+      "title": {
+        "weight": 1.75,
+        "k": 1.2,
+        "b": 0.15
+      },
+      "link": {},
+	  "h1": null,
+	  "heading": null,
+	  "headingLink": null,
+	  "_relative_fp": null,
+	  "bookshelf": {
+		  "storage": [{ "type": "enum" }]
+	  },
+	  "firstAuthorBirth": {
+		  "storage": [{ "type": "i64", "default": 0, "parse": {
+			  "method": "datetime",
+              "datetime_fmt": "%Y-%m-%d",
+			  "timezone": 0,
+			  "time": 0
+		  }}]
+	  }
+    }
+  },
+  "indexing_config": {
+    "loaders": {
+	  "JsonLoader": {
+		"field_map": {
+		  "link": "link",
+		  "title": "title",
+		  "body": "body",
+		  "bookshelf": "bookshelf",
+		  "birth_year": "firstAuthorBirth"
+		},
+		"field_order": [
+		  "link",
+		  "bookshelf",
+		  "birth_year",
+		  "title",
+		  "body"
+		]
+	  }
+	}
+  }
+}

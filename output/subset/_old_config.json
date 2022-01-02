@@ -1,0 +1,62 @@
+{
+  "fields_config": {
+    "fields": {
+      "_relative_fp": null,
+      "bookshelf": {
+        "storage": [
+          {
+            "type": "enum"
+          }
+        ]
+      },
+      "firstAuthorBirth": {
+        "storage": [
+          {
+            "default": 0,
+            "parse": {
+              "datetime_fmt": "%Y-%m-%d",
+              "method": "datetime",
+              "time": 0,
+              "timezone": 0
+            },
+            "type": "i64"
+          }
+        ]
+      },
+      "h1": null,
+      "heading": null,
+      "headingLink": null,
+      "link": {},
+      "title": {
+        "b": 0.15,
+        "k": 1.2,
+        "weight": 1.75
+      }
+    }
+  },
+  "indexing_config": {
+    "include": [
+      "*-1.json",
+      "*-2.json"
+    ],
+    "loaders": {
+      "JsonLoader": {
+        "field_map": {
+          "birth_year": "firstAuthorBirth",
+          "body": "body",
+          "bookshelf": "bookshelf",
+          "link": "link",
+          "title": "title"
+        },
+        "field_order": [
+          "link",
+          "bookshelf",
+          "birth_year",
+          "title",
+          "body"
+        ]
+      }
+    }
+  },
+  "preset": "medium"
+}

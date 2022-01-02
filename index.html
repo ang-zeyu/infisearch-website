@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>InfiSearch</title>
+    <link href="favicon.ico" rel="icon" />
+    <link href="./assets/fa/css/all.min.css" rel="stylesheet">
+    <link href="./assets/bootstrap.min.css" rel="stylesheet" />
+    <link href="./styles.css" rel="stylesheet" />
+    <!--  Search UI script -->
+    <script src="https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.9.1/packages/search-ui/dist/search-ui.ascii.bundle.js"></script>
+    <!-- Search UI css, this provides some basic styling for the search dropdown, and can be omitted if desired -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.9.1/packages/search-ui/dist/search-ui-light.css" />
+    <!-- <script src="/output/all/assets/search-ui.ascii.bundle.js"></script>
+    <link rel="stylesheet" href="/output/all/assets/search-ui-light.css" /> -->
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar navbar-expand-lg navbar-dark app-navbar position-fixed bg-dark">
+        <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item mx-2 flex-grow-1">
+            <a class="nav-link active" href="/">
+              Demo<i class="ms-1 fa-solid fa-laptop"></i>
+            </span>
+            </a>
+          </li>
+          <li class="nav-item mx-2 flex-grow-1">
+            <a class="nav-link" href="https://github.com/ang-zeyu/infisearch">
+              Github<i class="ms-1 fa-brands fa-github"></i>
+            </a>
+          </li>
+          <li class="nav-item mx-2 flex-grow-1">
+            <a class="nav-link" href="https://github.com/ang-zeyu/infisearch/releases">
+              Releases<i class="ms-1 fa-solid fa-cube"></i>
+            </a>
+          </li>
+          <li class="nav-item mx-2 flex-grow-1">
+            <a class="nav-link" href="/infisearch">
+              Documentation<i class="ms-1 fa-solid fa-book"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div
+        class="w-100 bg-light rounded d-flex flex-column align-items-center justify-content-center jumbotron position-relative"
+      >
+        <h1 class="app-heading">InfiSearch</h1>
+        <div class="mb-4 muted-text px-5 text-center" style="font-size: 14px">
+          Easy and powerful static site search
+        </div>
+        <form class="d-flex justify-content-between mx-auto flex-wrap input-form">
+          <div class="d-flex flex-column align-items-center input-wrapper">
+            <input class="infi-search" id="infi-search-docs" type="search" placeholder="📖 Search" />
+            <div class="mt-2 muted-text text-center" style="font-size: 12px">
+              Search InfiSearch's documentation.<br>
+              A typical use case<br>
+              No network requests are made
+            </div>
+          </div>
+          <div class="d-flex flex-column align-items-center input-wrapper">
+            <input class="infi-search" id="infi-search-gutenberg-subset" type="search" placeholder="Search" />
+            <div class="mt-2 muted-text text-center" style="font-size: 12px">
+              Search a subset of the Gutenberg Collection.<br>
+              130MB of text and 12917 documents<br>
+              Each search takes up to 1 network request
+            </div>
+          </div>
+          <div class="d-flex flex-column align-items-center input-wrapper">
+            <input class="infi-search" id="infi-search-gutenberg-all" type="search" placeholder="Search" />
+            <div class="mt-2 muted-text text-center" style="font-size: 12px">
+              Search a larger subset of the Gutenberg Collection.<br>
+              520MB of text and 53991 documents<br>
+              Each search takes up to 2 network requests
+            </div>
+          </div>
+        </form>
+        <script>
+          /*
+           0 - Light
+           1 - Basic
+           2 - Dark
+          */
+          let theme = 0;
+          function toggleTheme(ev) {
+            const links = Array.from(document.getElementsByTagName('link'));
+            const bootswatchLink = links.find((link) => /bootstrap/.test(link.href));
+            if (theme === 2) {
+              bootswatchLink.href = './assets/bootstrap.min.css';
+            } else if (theme === 1) {
+              bootswatchLink.href = './assets/bootstrap.lux.min.css';
+            }
+
+            const styleLink = links.find((link) => /search-ui-[a-z]+\.css/.test(link.href));
+            if (theme === 2) {
+              document.documentElement.style.setProperty('--fg', 'black');
+              document.documentElement.style.setProperty('--muted-fg', '#8e8c84');
+              document.documentElement.style.setProperty('--bg', 'white');
+              document.documentElement.style.setProperty('--bg-secondary', '#212529');
+              document.documentElement.style.setProperty('--input-bg', 'white');
+              document.documentElement.style.setProperty('--input-border', '2px solid rgb(240, 240, 240)');
+              document.documentElement.classList.add('light');
+              document.documentElement.classList.remove('dark');
+
+              styleLink.href = '/output/all/assets/search-ui-light.css';
+              document.getElementById('current-theme').textContent = 'Light';
+            } else if (theme === 1) {
+              document.documentElement.style.setProperty('--fg', '#e4f1f0');
+              document.documentElement.style.setProperty('--muted-fg', '#eee');
+              document.documentElement.style.setProperty('--bg', '#27292a');
+              document.documentElement.style.setProperty('--bg-secondary', '#27292a');
+              document.documentElement.style.setProperty('--input-bg', '#171919');
+              document.documentElement.style.setProperty('--input-border', '2px solid rgba(200,200,200,0.3)');
+              document.documentElement.classList.remove('light');
+              document.documentElement.classList.add('dark');
+
+              styleLink.href = '/output/all/assets/search-ui-dark.css';
+              document.getElementById('current-theme').textContent = 'Dark';
+            } else if (theme === 0) {
+              styleLink.href = '/output/all/assets/search-ui-basic.css';
+              document.getElementById('current-theme').textContent = 'Basic';
+            }
+
+            theme = (theme + 1) % 3;
+          }
+        </script>
+        <button class="btn btn-outline-dark position-absolute" style="right: 10px; bottom: 10px;" onclick="toggleTheme(event)">
+          Cycle Theme<i class="ms-1 fa-solid fa-lightbulb"></i><br><small>Current: <span id="current-theme">Light</span></small>
+        </button>
+      </div>
+      <div class="px-4 px-md-5 py-5 w-100">
+        <div class="filler-text intro-text">
+          <p class="mb-0">
+            <span class="infisearch-text">InfiSearch</span> is a client-side search solution tailored for static sites that depends on a <strong>pre-built index</strong> generated by a <strong>command-line</strong> tool.
+          </p>
+        </div>
+      </div>
+      <div class="px-4 px-md-5 pb-2 pt-5 w-100 bg-light">
+        <div class="filler-text">
+          <h4 class="feature-header">
+            Blazing fast. <i class="text-primary fa-solid fa-truck-fast"></i>
+          </h4>
+          <p class="feature-text">
+            Powered by WebAssembly and Webworkers, InfiSearch blazes through searches on tens of thousands of documents.<br>
+            Index downloads are persistently cached without the hassle of service worker setup, so users never download the same data twice.
+          </p>
+        </div>
+      </div>
+      <div class="px-4 px-md-5 py-2 w-100 bg-light">
+        <div class="filler-text">
+          <h4 class="feature-header">
+            Scale your Client Side Search to the Next Level <i class="fa-solid fa-chart-simple" style="color: rgb(180, 7, 180)"></i>
+          </h4>
+          <p class="feature-text">
+            A monolithic index is built by default to reduce network latency, but you also have the option of splitting up the index so users retrieve only what's necessary, greatly improving client-side search scalability.
+          </p>
+        </div>
+      </div>
+      <div class="px-4 px-md-5 py-2 w-100 bg-light">
+        <div class="filler-text">
+          <h4 class="feature-header">
+            Relevant and Powerful Search <i class="text-success fa-solid fa-bullseye"></i>
+          </h4>
+          <p class="feature-text mb-3">
+            Dealing with thousands of documents requires a search solution that returns what users want quickly and accurately.
+          </p>
+          <p class="feature-text">
+            InfiSearch adopts industry-standard scoring schemes and layers its own strategy of proximity ranking on top so that results are contextual.
+            Boolean operators, phrase searches, facet filters are also available for users to refine searches.
+          </p>
+        </div>
+      </div>
+      <div class="px-4 px-md-5 pt-2 pb-5 w-100 bg-light">
+        <div class="filler-text">
+          <h4 class="feature-header">
+            Portable <i class="text-secondary fa-sharp fa-solid fa-briefcase"></i>
+          </h4>
+          <p class="feature-text">
+            InfiSearch is a CLI tool that can be run on any static site and/or static site generators. Other file formats such as JSON, PDF, CSVs are also available to support more custom data requirements.
+          </p>
+        </div>
+      </div>
+      <div class="px-4 px-md-5 pt-2 pb-5 w-100">
+        <div class="filler-text">
+          <h4 class="mt-4" style="font-weight: bold; font-size: 1.5em;">Credits</h2>
+          <p>
+            The 2 latter demos above showcase InfiSearch's performance on much larger collections, courtesy of the Gutenberg project.
+            The collection is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    infisearch.init({
+      searcherOptions: {
+        url: '/infisearch/infisearch_output',
+      },
+      uiOptions: {
+        sourceFilesUrl: '/infisearch/',
+        input: 'infi-search-docs',
+        dropdownAlignment: 'bottom',
+        multiSelectFilters: [
+          { fieldName: 'partTitle', displayName: 'Section', defaultOptName: 'None' },
+        ],
+      }
+    });
+
+    infisearch.init({
+      searcherOptions: {
+        url: '/output/subset/',
+      },
+      uiOptions: {
+        sourceFilesUrl: '/source/files/',
+        input: 'infi-search-gutenberg-subset',
+        dropdownAlignment: 'bottom',
+        multiSelectFilters: [
+          { fieldName: 'bookshelf', displayName: 'Bookshelf', defaultOptName: 'None' },
+        ],
+        numericFilters: [
+          {
+            fieldName: 'firstAuthorBirth',
+            displayName: 'Date Posted',
+            type: 'date',
+            gtePlaceholder: 'After',
+            ltePlaceholder: 'Before',
+          },
+        ],
+      }
+    });
+
+    infisearch.init({
+      searcherOptions: {
+        url: '/output/all/',
+      },
+      uiOptions: {
+        sourceFilesUrl: '/source/files/',
+        input: 'infi-search-gutenberg-all',
+        inputDebounce: 125,
+        dropdownAlignment: 'bottom',
+        multiSelectFilters: [
+          { fieldName: 'bookshelf', displayName: 'Bookshelf', defaultOptName: 'None' },
+        ],
+        numericFilters: [
+          {
+            fieldName: 'firstAuthorBirth',
+            displayName: 'Date Posted',
+            type: 'date',
+            gtePlaceholder: 'After',
+            ltePlaceholder: 'Before',
+          },
+        ],
+      }
+    });
+  </script>
+</html>

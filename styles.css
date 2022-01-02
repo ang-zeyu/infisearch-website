@@ -1,0 +1,155 @@
+:root {
+    --bg: white;
+    --bg-secondary: #212529;
+    --input-bg: white;
+    --input-border: 3px solid rgb(240, 240, 240);
+    --fg: black;
+    --muted-fg: #8e8c84;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--fg);
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.app-navbar {
+    position: fixed;
+    z-index: 100;
+    padding: 20px 30px;
+    width: 100vw;
+    overflow-x: auto;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.app-navbar > ul {
+    margin: 0 auto;
+}
+
+.jumbotron {
+    padding-top: 80px;
+    height: 450px;
+}
+
+.app-heading {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.muted-text {
+    color: var(--muted-fg);
+}
+
+.input-form {
+    gap: 20px 50px;
+}
+
+.input-form > div {
+    width: 280px;
+}
+
+.infi-search {
+    padding: 0 1em;
+    outline: none;
+    width: 200px;
+    height: 40px;
+    border: var(--input-border);
+    border-radius: 30px;
+    font-size: 16px;
+    box-sizing: border-box;
+    color: var(--fg);
+    background: var(--input-bg);
+}
+
+.infi-search:focus {
+    border: 3px solid rgba(99, 186, 255, 0.5);
+    box-shadow: 0 0 5px rgb(99, 186, 255);
+}
+
+@media screen and (max-width: 1124px) {
+    #infi-search {
+        width: 100%;
+    }
+
+    .jumbotron {
+        padding-top: 120px;
+        height: 730px;
+        padding-bottom: 80px;
+    }
+
+    .input-form {
+        width: 100%;
+    }
+
+    .input-form > div {
+        width: 100%;
+    }
+}
+
+.cta {
+    margin: 0 auto;
+
+}
+
+.feature-header {
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #222;
+}
+
+.dark .feature-header {
+    color: #f0f0f0;
+}
+
+.feature-text {
+    margin: 5px auto 0 auto;
+    color: #444;
+}
+
+.dark .feature-text {
+    color: #eee;
+}
+
+.intro-text {
+    color: #444;
+    font-size: 1.08em;
+}
+
+.dark .intro-text {
+    color: #eee;
+}
+
+.infisearch-text {
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.dark .infisearch-text {
+    color: #eee;
+}
+
+.filler-text {
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1125px) {
+    .filler-text {
+        width: 75%;
+        max-width: 1024px;
+    }
+}
+
+#target-mode-el {
+    list-style: none;
+}
