@@ -506,27 +506,28 @@
 <p>Only the first <code>[fieldName, fieldText]</code> pair for each field will be populated into the <code>fields</code> object.</p>
 <p><strong>Tip: Constructing a Document Link</strong></p>
 <p>If you haven’t manually added any links to your source documents, you can use the <code>_relative_fp</code> field to construct one, by concatenating it to a base URL for example. Any links added via the <a href="./linking_to_others.html"><code>data-infisearch-link</code></a> attribute are also available under the <code>link</code> field.</p>
-<h3 id="2-linking-and-highlighting-heading-body-fields"><a class="header" href="#2-linking-and-highlighting-heading-body-fields">2. Linking and Highlighting ‘heading’, ‘body’ Fields</a></h3>
-<p>To establish the relationship between <em>heading</em>, <em>body</em> and <em>headingLink</em> pairs, you can call the <code>getHeadingBodyExcerpts</code> method.</p>
-<pre><code class="language-ts">const bodyHeadingMatchResults: Segment[] = result.getHeadingBodyExcerpts();
+<h3 id="2-linking-and-highlighting-headings-to-other-content-fields"><a class="header" href="#2-linking-and-highlighting-headings-to-other-content-fields">2. Linking and Highlighting Headings to other Content Fields</a></h3>
+<p>To establish the relationship between <em>heading</em> and <em>headingLink</em> pairs to other content fields following them, call <code>getHeadingsAndContents</code>.</p>
+<pre><code class="language-ts">// The parameter is a varargs of field names to consider as content fields
+const headingsAndContents: Segment[] = result.linkHeadingsToContents('body');
 </code></pre>
-<p>This returns an array of <code>Segment</code> objects, each of which represents a continuous chunk of heading or body text. It follows this interface:</p>
+<p>This returns an array of <code>Segment</code> objects, each of which represents a continuous chunk of heading or content text. It follows this interface:</p>
 <pre><code class="language-ts">interface Segment {
   /**
-   * 'body': body text
+   * 'content': content text without preceding heading
    * 'heading': text from 'heading' fields
-   * 'heading-body': body text with a preceding heading
+   * 'heading-content': content text with a preceding heading
    */
-  type: 'body' | 'heading' | 'heading-body',
+  type: 'content' | 'heading' | 'heading-content',
 
   /**
-   * Only present if type = 'heading-body',
+   * Only present if type = 'heading-content',
    * and points to another Segment of type === 'heading'.
    */
   heading?: Segment,
 
   /**
-   * Only present if type = 'heading' | 'heading-body',
+   * Only present if type = 'heading' | 'heading-content',
    * and points to the heading's id, if any.
    */
   headingLink?: string,

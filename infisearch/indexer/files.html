@@ -467,12 +467,12 @@
   }
 }
 </code></pre>
-<p>JSON files can also be indexed. The <code>field_map</code> must be specified, which contains a mapping of <strong>JSON data key -&gt; field name</strong>.
-The <code>field_order</code> array controls the order in which these fields are indexed, which has a minor influence on <a href="../introduction.html#ranking-model">query term proximity ranking</a>.</p>
+<p>JSON files can also be indexed. The <code>field_map</code> contains a mapping of your <strong>JSON data key -&gt; field name</strong>.
+The <code>field_order</code> array controls the order in which the data keys are indexed, which has a minor influence on <a href="../introduction.html#ranking-model">query term proximity ranking</a>.</p>
 <p>The JSON file can be either:</p>
 <ol>
-<li>An object, following the schema set out in <code>field_map</code></li>
-<li>An array of objects following the schema set out in <code>field_map</code></li>
+<li>An object, with numbers, strings or <code>null</code> values</li>
+<li>An array of such objects</li>
 </ol>
 <h4 id="csv-files-loaderscsvloader"><a class="header" href="#csv-files-loaderscsvloader">CSV Files: <strong><code>loaders.CsvLoader</code></strong></a></h4>
 <pre><code class="language-json">&quot;loaders&quot;: {
