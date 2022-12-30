@@ -80,7 +80,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="language.html"><strong aria-hidden="true">4.</strong> Language</a></li><li class="chapter-item expanded "><a href="indexer_configuration.html"><strong aria-hidden="true">5.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="indexer/fields.html"><strong aria-hidden="true">5.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="indexer/files.html"><strong aria-hidden="true">5.2.</strong> Files</a></li><li class="chapter-item expanded "><a href="indexer/misc.html"><strong aria-hidden="true">5.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="search_api.html" class="active"><strong aria-hidden="true">6.</strong> Search API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_syntax.html"><strong aria-hidden="true">6.1.</strong> Query Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="larger_collections.html"><strong aria-hidden="true">7.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="linking_to_others.html"><strong aria-hidden="true">8.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="filters.html"><strong aria-hidden="true">9.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="numeric_sorts.html"><strong aria-hidden="true">10.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="search_configuration_renderers.html"><strong aria-hidden="true">11.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="incremental_indexing.html"><strong aria-hidden="true">12.</strong> Incremental Indexing</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="indexer_configuration.html"><strong aria-hidden="true">4.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="indexer/fields.html"><strong aria-hidden="true">4.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="indexer/files.html"><strong aria-hidden="true">4.2.</strong> Data</a></li><li class="chapter-item expanded "><a href="indexer/misc.html"><strong aria-hidden="true">4.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="language.html"><strong aria-hidden="true">5.</strong> Language</a></li><li class="chapter-item expanded "><a href="search_api.html" class="active"><strong aria-hidden="true">6.</strong> Search API</a></li><li class="chapter-item expanded "><a href="search_syntax.html"><strong aria-hidden="true">7.</strong> Query Syntax</a></li><li class="chapter-item expanded "><a href="larger_collections.html"><strong aria-hidden="true">8.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="linking_to_others.html"><strong aria-hidden="true">9.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="filters.html"><strong aria-hidden="true">10.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="numeric_sorts.html"><strong aria-hidden="true">11.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="search_configuration_renderers.html"><strong aria-hidden="true">12.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="incremental_indexing.html"><strong aria-hidden="true">13.</strong> Incremental Indexing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -439,7 +439,7 @@
   },
 });
 </code></pre>
-<p>Sort document results using <a href="./indexer/fields.html#field-storage">numeric fields</a> instead of using relevance. Results are still tie-broken by their relevance.</p>
+<p>Sort document results using <a href="./indexer/fields.html#field-storage">numeric fields</a>. Results are tie-broken by their relevance.</p>
 <pre><code class="language-ts">const query: Query = await searcher.runQuery('weather', {
   sort: 'pageViews',     // where 'pageViews' is the name of the field
   sortAscending: false,  // the default is to sort in descending order
@@ -449,7 +449,7 @@
 <p>Running a query alone probably isn’t very useful. You can get a <code>Result</code> object using the <code>getNextN</code> function.</p>
 <pre><code class="language-ts">const results: Result[] = await query.getNextN(10);
 </code></pre>
-<p>A <code>Result</code> object stores the fields of the indexed document.</p>
+<p>A <code>Result</code> object stores the <a href="./indexer/fields.html#field-storage">fields</a> of the indexed document.</p>
 <pre><code class="language-ts">const fields = results[0].fields;
 
 &gt; console.log(fields)
@@ -468,18 +468,20 @@
     reporter: null,
   },
   numbers: {
-    // These are bigints
-    datePosted: 1671336914,
+    datePosted: 1671336914n,
   }
 }
 </code></pre>
 <ul>
 <li>
-<p><code>texts</code>: fields are stored as an array of <code>[fieldName, fieldText]</code> pairs in the order they were seen.</p>
+<p><code>texts</code>: an array of <code>[fieldName, fieldText]</code> pairs stored in the order they were seen.</p>
 <p>This ordered model is more complex than a regular key-value store, but enables the detailed content hierarchy you see in InfiSearch’s UI: <em>Title &gt; Heading &gt; Text under heading</em></p>
 </li>
 <li>
-<p><code>enums</code>: This stores the enum values of the document. Documents missing specific enum values will be assigned <code>null</code>.</p>
+<p><code>enums</code>: stores the enum values of the document. Documents missing enum values are assigned <code>null</code>.</p>
+</li>
+<li>
+<p><code>numbers</code>: <code>u64</code> fields returned as Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt"><code>BigInt</code></a> values.</p>
 </li>
 </ul>
 <h2 id="memory-management"><a class="header" href="#memory-management">Memory Management</a></h2>
@@ -490,10 +492,10 @@
 <p>Search interfaces usually live for the entire lifetime of the application. If you need to do so however, you should also free the <code>Searcher</code> instance:</p>
 <pre><code class="language-ts">searcher.free();
 </code></pre>
-<h2 id="convenience-methods"><a class="header" href="#convenience-methods">Convenience Methods</a></h2>
+<h2 id="ui-convenience-methods"><a class="header" href="#ui-convenience-methods">UI Convenience Methods</a></h2>
 <p>A <code>Result</code> object also exposes 2 other convenience functions that may be useful to help deal with the positional format of the <code>text</code> type field stores.</p>
 <h3 id="1-retrieving-singular-fields-as-kv-stores"><a class="header" href="#1-retrieving-singular-fields-as-kv-stores">1. Retrieving Singular Fields as KV Stores</a></h3>
-<p>Certain fields will only occur once in every document (e.g. titles, <code>&lt;h1&gt;</code> tags). To retrieve these easily, you can use the <code>getKVFields</code> method:</p>
+<p>Certain fields will only occur once in every document (e.g. titles, <code>&lt;h1&gt;</code> tags). To retrieve these easily, use the <code>getKVFields</code> method:</p>
 <pre><code class="language-ts">const kvFields = result.getKVFields('link', '_relative_fp', 'title', 'h1');
 
 &gt; console.log(kvFields)
@@ -505,13 +507,13 @@
 </code></pre>
 <p>Only the first <code>[fieldName, fieldText]</code> pair for each field will be populated into the <code>fields</code> object.</p>
 <p><strong>Tip: Constructing a Document Link</strong></p>
-<p>If you haven’t manually added any links to your source documents, you can use the <code>_relative_fp</code> field to construct one, by concatenating it to a base URL for example. Any links added via the <a href="./linking_to_others.html"><code>data-infisearch-link</code></a> attribute are also available under the <code>link</code> field.</p>
-<h3 id="2-linking-and-highlighting-headings-to-other-content-fields"><a class="header" href="#2-linking-and-highlighting-headings-to-other-content-fields">2. Linking and Highlighting Headings to other Content Fields</a></h3>
-<p>To establish the relationship between <em>heading</em> and <em>headingLink</em> pairs to other content fields following them, call <code>getHeadingsAndContents</code>.</p>
+<p>If you haven’t manually added links to your source documents, you can use the <code>_relative_fp</code> field to construct one by concatenating it to a base URL. Any links added via the <a href="./linking_to_others.html"><code>data-infisearch-link</code></a> attribute are also available under the <code>link</code> field.</p>
+<h3 id="2-associating-headings-to-other-content-fields-and-highlighting"><a class="header" href="#2-associating-headings-to-other-content-fields-and-highlighting">2. Associating Headings to other Content Fields and Highlighting</a></h3>
+<p>To establish the relationship between <code>heading</code> and <code>headingLink</code> pairs to other content fields following them, call <code>getHeadingsAndContents</code>.</p>
 <pre><code class="language-ts">// The parameter is a varargs of field names to consider as content fields
 const headingsAndContents: Segment[] = result.linkHeadingsToContents('body');
 </code></pre>
-<p>This returns an array of <code>Segment</code> objects, each of which represents a continuous chunk of heading or content text. It follows this interface:</p>
+<p>This returns an array of <code>Segment</code> objects, each of which represents a continuous chunk of heading or content text:</p>
 <pre><code class="language-ts">interface Segment {
   /**
    * 'content': content text without preceding heading
@@ -537,17 +539,17 @@ const headingsAndContents: Segment[] = result.linkHeadingsToContents('body');
 }
 </code></pre>
 <p><strong>Sorting and Choosing Segments</strong></p>
-<p>You would likely want to select and display a <strong>few best segments</strong> only. To rank them, you could for example first priortise segments with a greater <code>numTerms</code> matched, then tie-break by the <code>type</code> of the segment. This is up to your UI!</p>
+<p>This is fully up to your UI. For example, you can first priortise segments with a greater <code>numTerms</code>, then tie-break by the <code>type</code> of the segment. </p>
 <p><strong>Text Highlighting</strong></p>
 <pre><code class="language-ts">interface Segment {
-  ...
+  // ... continuation ...
+
   highlightHTML: (addEllipses: boolean = true) =&gt; string,
   highlight: (addEllipses: boolean = true) =&gt; (string | HTMLElement)[],
 
   text: string,                             // original string
   window: { pos: number, len: number }[],   // Character position and length
 }
-
 </code></pre>
 <p>There are 3 choices for text highlighting:</p>
 <ol>
@@ -557,7 +559,7 @@ A single escaped HTML string is then returned for use.</p>
 </li>
 <li>
 <p><code>highlight()</code> does the same but is slightly more efficient, returning a <code>(string | HTMLElement)[]</code> array.
-To use this array safely (strings are unescaped) and conveniently, use the <code>.append(...output)</code> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/append">DOM API</a>.</p>
+To use this array safely (strings are unescaped) and conveniently, use the <code>.append(...seg.highlight())</code> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/append">DOM API</a>.</p>
 <details>
 <summary style="cursor: default;">Click to see example output</summary>
 <pre><code class="language-ts">[
@@ -571,7 +573,7 @@ To use this array safely (strings are unescaped) and conveniently, use the <code
 </details>
 </li>
 <li>
-<p>Lastly, you could perform text highlighting manually using the original <code>text</code> and the closest <code>window</code> of term matches.</p>
+<p>Lastly, you can perform text highlighting manually using the original <code>text</code> and the closest <code>window</code> of term matches.</p>
 </li>
 </ol>
 <script src="/infisearch/infisearch_assets/search-ui.ascii.bundle.js" type="text/javascript" charset="utf-8"></script>
@@ -646,7 +648,7 @@ if (window.location.search) {
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="indexer/misc.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="language.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -660,7 +662,7 @@ if (window.location.search) {
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="indexer/misc.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="language.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 

@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="language.html"><strong aria-hidden="true">4.</strong> Language</a></li><li class="chapter-item expanded "><a href="indexer_configuration.html"><strong aria-hidden="true">5.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="indexer/fields.html"><strong aria-hidden="true">5.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="indexer/files.html"><strong aria-hidden="true">5.2.</strong> Files</a></li><li class="chapter-item expanded "><a href="indexer/misc.html"><strong aria-hidden="true">5.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_syntax.html"><strong aria-hidden="true">6.1.</strong> Query Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="larger_collections.html"><strong aria-hidden="true">7.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="linking_to_others.html"><strong aria-hidden="true">8.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="filters.html"><strong aria-hidden="true">9.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="numeric_sorts.html"><strong aria-hidden="true">10.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="search_configuration_renderers.html"><strong aria-hidden="true">11.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="incremental_indexing.html"><strong aria-hidden="true">12.</strong> Incremental Indexing</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="indexer_configuration.html"><strong aria-hidden="true">4.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="indexer/fields.html"><strong aria-hidden="true">4.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="indexer/files.html"><strong aria-hidden="true">4.2.</strong> Data</a></li><li class="chapter-item expanded "><a href="indexer/misc.html"><strong aria-hidden="true">4.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="language.html"><strong aria-hidden="true">5.</strong> Language</a></li><li class="chapter-item expanded "><a href="search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li class="chapter-item expanded "><a href="search_syntax.html"><strong aria-hidden="true">7.</strong> Query Syntax</a></li><li class="chapter-item expanded "><a href="larger_collections.html"><strong aria-hidden="true">8.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="linking_to_others.html"><strong aria-hidden="true">9.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="filters.html"><strong aria-hidden="true">10.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="numeric_sorts.html"><strong aria-hidden="true">11.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="search_configuration_renderers.html"><strong aria-hidden="true">12.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="incremental_indexing.html"><strong aria-hidden="true">13.</strong> Incremental Indexing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -740,6 +740,12 @@ if (window.location.search) {
 <p><span style="font-weight: 600;"><!--preload weight 600--></span></p>
 <div id="infisearch-mdbook-target"></div>
 <h1 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h1>
+<script>
+if (localStorage.getItem('mdbook-theme') === 'infi-theme' || localStorage.getItem('mdbook-theme') === 'morsels-theme') {
+   localStorage.removeItem('mdbook-theme');
+   location.reload();
+}
+</script>
 <p>This page assumes the use case of a <strong>static site</strong>, that is:</p>
 <ul>
 <li>
@@ -762,7 +768,7 @@ To preview the defaults, head on over <a href="./search_configuration_styling.ht
 <p>There are a couple of options for installing the indexer:</p>
 <ul>
 <li>Install the global npm package with <code>npm install -g @infisearch/cli</code>.</li>
-<li>If you have the rust / cargo toolchains setup, run <code>cargo install infisearch --vers 0.9.1</code>.</li>
+<li>If you have the rust / cargo toolchains setup, run <code>cargo install infisearch --vers 0.10.0</code>.</li>
 <li>You can also grab the cli binaries <a href="https://github.com/ang-zeyu/infisearch/releases">here</a>.</li>
 </ul>
 <h2 id="running-the-indexer"><a class="header" href="#running-the-indexer">Running the indexer</a></h2>
@@ -777,12 +783,12 @@ To preview the defaults, head on over <a href="./search_configuration_styling.ht
 </ul>
 <h2 id="installing-the-search-ui"><a class="header" href="#installing-the-search-ui">Installing the search UI</a></h2>
 <h3 id="installation-via-cdn"><a class="header" href="#installation-via-cdn">Installation via CDN</a></h3>
-<pre><code class="language-html">&lt;!-- Replace &quot;v0.9.1&quot; as appropriate --&gt;
+<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.0&quot; as appropriate --&gt;
 
 &lt;!--  Search UI script --&gt;
-&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.9.1/packages/search-ui/dist/search-ui.ascii.bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui.ascii.bundle.js&quot;&gt;&lt;/script&gt;
 &lt;!-- Search UI css, this provides some basic styling for the search dropdown, and can be omitted if desired --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.9.1/packages/search-ui/dist/search-ui-light.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui-light.css&quot; /&gt;
 </code></pre>
 <blockquote>
 <p>⚠️ Ensure the linked versions <strong>match the indexer version</strong> used exactly.</p>
@@ -1902,22 +1908,22 @@ if (window.location.search) {
 <div class="table-wrapper"><table><thead><tr><th>Option</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>tip</code></td><td><code>true</code></td><td>Shows the advanced search tips icon on the bottom right.</td></tr>
 <tr><td><code>maxSubMatches</code></td><td><code>2</code></td><td>Maximum headings to show for a result preview.</td></tr>
-<tr><td><code>resultsPerPage</code></td><td><code>10</code></td><td>Number of results to load when the ‘load more’ is clicked.</td></tr>
+<tr><td><code>resultsPerPage</code></td><td><code>10</code></td><td>Number of results to load when ‘load more’ is clicked.</td></tr>
 <tr><td><code>useBreadcrumb</code></td><td><code>false</code></td><td>Prefer using the file path as the result preview’s title. This is formatted into a breadcrumb, transformed to Title Case.<br><br>Example: <code>'documentation/userGuide/my_file.html'</code> → <code>Documentation » User Guide » My File</code>.</td></tr>
 </tbody></table>
 </div>
 <h4 id="setting-up-enum-filters-"><a class="header" href="#setting-up-enum-filters-">Setting Up Enum Filters ∀</a></h4>
-<p>Enum <a href="./indexer/fields.html#field-storage">fields</a> you index can be mapped into UI multi-select dropdowns. In this documentation for example (try the search), Mdbook’s section titles (“User Guide”, “Advanced”) are mapped.</p>
+<p>Enum <a href="./indexer/fields.html#field-storage">fields</a> you index can be mapped into UI multi-select dropdowns. In this documentation for example, Mdbook’s section titles “User Guide”, “Advanced” are mapped.</p>
 <p>Setup bindings under <code>uiOptions</code> like so:</p>
 <pre><code class="language-ts">multiSelectFilters: [
   {
-    fieldName: 'partTitle',
-    displayName: 'Section',
-    defaultOptName: 'None'
+    fieldName: 'partTitle',  // name of field definition
+    displayName: 'Section',  // UI header text
+    defaultOptName: 'None',
+    collapsed: true,         // only the first header is initially expanded
   },
 ]
 </code></pre>
-<p>The <code>fieldName</code> corresponds to the <code>name</code> of your <a href="./indexer/fields.html">field</a> definition, while <code>displayName</code> controls the UI header text.</p>
 <p>Documents that do not have an enum value are assigned an internal default enum value. The option text of this enum value to show is specified by <code>defaultOptName</code>.</p>
 <h4 id="setting-up-numeric-filters-and-sort-orders"><a class="header" href="#setting-up-numeric-filters-and-sort-orders">Setting Up Numeric Filters and Sort Orders</a></h4>
 <p>Indexed numeric <a href="./indexer/fields.html#field-storage">fields</a> can be mapped into minimum-maximum filters of <code>&lt;input type=&quot;number|date|datetime-local&quot; /&gt;</code>, or used to create custom sort orders.</p>
@@ -1926,15 +1932,17 @@ if (window.location.search) {
   {
     fieldName: 'pageViewsField',
     displayName: 'Number of Views',
-    type: 'number', // date, datetime-local is also supported
-    gtePlaceholder: 'Min',
-    ltePlaceholder: 'Max',
+    type: 'number' | 'date' | 'datetime-local',
+    // Text above date, datetime-local filters and placeholder text for number filters
+    // Also announced to screenreaders
+    minLabel: 'Min',
+    maxLabel: 'Max',
   }
 ]
 </code></pre>
 <p><em>Sorting by Numbers, Dates</em></p>
 <pre><code class="language-ts">sortFields: {
-  // Map of the name of your numeric field to UI options
+  // Map of the name of your numeric field to names of UI options
   price: {
     asc: 'Price: Low to High',
     desc: 'Price: High to Low',
@@ -1943,7 +1951,7 @@ if (window.location.search) {
 </code></pre>
 <h4 id="manually-showing--hiding-the-fullscreen-ui"><a class="header" href="#manually-showing--hiding-the-fullscreen-ui">Manually Showing / Hiding the Fullscreen UI</a></h4>
 <p>Call the <code>showFullscreen()</code> and <code>hideFullscreen()</code> functions returned by the <code>infisearch.init</code> to programatically show/hide the fullscreen search UI.</p>
-<pre><code class="language-ts">// These methods can be used under `mode=&quot;auto|fullscreen&quot;`
+<pre><code class="language-ts">// These methods can be used under mode=&quot;auto|fullscreen&quot;
 const { showFullscreen, hideFullscreen } = infisearch.init({ ... });
 </code></pre>
 <h4 id="client-side-routing"><a class="header" href="#client-side-routing">Client Side Routing</a></h4>
@@ -1952,15 +1960,15 @@ const { showFullscreen, hideFullscreen } = infisearch.init({ ... });
   onLinkClick: function (ev) {
     /*
      By default, this function is a thunk.
-     Call ev.preventDefault() and the client-side routing code here.
+     Call ev.preventDefault() and client-side routing code here.
      Access the anchor element using &quot;this&quot;.
     */
   }
 }
 </code></pre>
 <h4 id="changing-the-mobile-device-detection-method"><a class="header" href="#changing-the-mobile-device-detection-method">Changing The Mobile Device Detection Method</a></h4>
-<p>If the client is a “mobile device”, the fullscreen version of the user interface under <code>mode='auto'</code>.
-This check is done through the following media query, which can be overwritten:</p>
+<p>If the client is a “mobile device”, the fullscreen UI is used under <code>mode='auto'</code>.
+The check is done with a media query, which can be overwritten:</p>
 <pre><code class="language-js">uiOptions: {
   // Any function returning a boolean
   isMobileDevice: () =&gt;
@@ -1968,30 +1976,35 @@ This check is done through the following media query, which can be overwritten:<
 }
 </code></pre>
 <h2 id="search-functionality-options"><a class="header" href="#search-functionality-options">Search Functionality Options</a></h2>
-<p>The options regarding search functionalities itself are rather brief, its defaults are summarised in this snippet:</p>
+<p>The options regarding search functionalities itself are rather brief:</p>
 <pre><code class="language-js">infisearch.init({
     searcherOptions: {
         // URL of output directory generated by the CLI tool
         url: 'http://192.168.10.132:3000/output/',
 
+        // ---------------------------------------------------------------
+        // Optional Parameters
         maxAutoSuffixSearchTerms: 3,
         maxSuffixSearchTerms: 5,
 
         useQueryTermProximity: true,
 
-        // The maximum number of results to retrieve (unlimited if null).
+        // Maximum number of results (unlimited if null).
         resultLimit: null,
 
-        // ---------------------------------------------------------------
+        // ------------------------------
         // Caching Options
-        // Whether to cache **all** the texts storage=[{ &quot;type&quot;: &quot;text&quot; }] fields on initialisation,
-        // to avoid making network requests when generating result previews.
-        // See the chapter on Fields for more information.
+
+        // Caches **all** texts of storage=[{ &quot;type&quot;: &quot;text&quot; }] fields up front,
+        // to avoid network requests when generating result previews.
+        // Discussed in the &quot;Larger Collections&quot; chapter.
         cacheAllFieldStores: undefined,
 
-        // Any index file &gt;= this size requested before will be persistently cached
-        // This option does not affect field stores.
+        // Any index chunk larger than this number of bytes
+        // will be persistently cached once requested.
         plLazyCacheThreshold: 0,
+        // ------------------------------
+
         // ---------------------------------------------------------------
     },
 });
@@ -2337,8 +2350,8 @@ if (window.location.search) {
 <p>Head on over to the demo site <a href="https://infi-search.com">here</a> to try them out!</p>
 <h3 id="light"><a class="header" href="#light">Light</a></h3>
 <h4 id="cdn-link"><a class="header" href="#cdn-link">CDN link</a></h4>
-<pre><code class="language-html">&lt;!-- Replace &quot;v0.9.1&quot; as appropriate --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.9.1/packages/search-ui/dist/search-ui-light.css&quot; /&gt;
+<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.0&quot; as appropriate --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui-light.css&quot; /&gt;
 </code></pre>
 <h4 id="preview-1"><a class="header" href="#preview-1">Preview</a></h4>
 <div class="image-container">
@@ -2347,16 +2360,16 @@ if (window.location.search) {
 </div>
 <h3 id="basic"><a class="header" href="#basic">Basic</a></h3>
 <h4 id="cdn-link-1"><a class="header" href="#cdn-link-1">CDN link</a></h4>
-<pre><code class="language-html">&lt;!-- Replace &quot;v0.9.1&quot; as appropriate --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.9.1/packages/search-ui/dist/search-ui-basic.css&quot; /&gt;
+<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.0&quot; as appropriate --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui-basic.css&quot; /&gt;
 </code></pre>
 <div class="image-container">
 <img src="./images/basic-theme-dropdown.png" alt="Preview of basic theme (dropdown)">
 </div>
 <h3 id="dark"><a class="header" href="#dark">Dark</a></h3>
 <h4 id="cdn-link-2"><a class="header" href="#cdn-link-2">CDN link</a></h4>
-<pre><code class="language-html">&lt;!-- Replace &quot;v0.9.1&quot; as appropriate --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.9.1/packages/search-ui/dist/search-ui-dark.css&quot; /&gt;
+<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.0&quot; as appropriate --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui-dark.css&quot; /&gt;
 </code></pre>
 <h4 id="preview-2"><a class="header" href="#preview-2">Preview</a></h4>
 <div class="image-container">
@@ -2381,410 +2394,6 @@ if (window.location.search) {
 }
 </code></pre>
 <script src="/infisearch/infisearch_assets/search-ui.ascii.bundle.js" type="text/javascript" charset="utf-8"></script>
-<script src="/infisearch/infisearch_assets/mark.min.js" type="text/javascript" charset="utf-8"></script>
-<script>
-const base_url = '/infisearch/';
-const mode = (function () {
-                // This IIFE is documentation specific, for demoing the different modes.
-                // It would be the string mode (e.g. 'target') normally
-                const params = new URLSearchParams(window.location.search);
-                return params.get('mode') || 'target';
-            })();
-infisearch.init({
-  searcherOptions: {
-    url: base_url + 'infisearch_output/',
-  },
-  uiOptions: {
-    mode,
-    dropdownAlignment: 'bottom-start',
-    target: document.getElementById('infisearch-mdbook-target'),
-    fsButtonPlaceholder: 'Search',
-    sourceFilesUrl: base_url,
-    resultsRenderOpts: {
-      searchedTermsParam: 'search',
-    },
-    multiSelectFilters: [
-      { fieldName: 'partTitle', displayName: 'Section', defaultOptName: 'None' },
-    ],
-  },
-});
-
-document.getElementById('infi-search').addEventListener('keydown', (ev) => {
-  if (['ArrowLeft', 'ArrowRight'].includes(ev.key)) {
-    ev.stopPropagation(); // used in global listener to change pages
-    return;
-  }
-});
-
-if (window.location.search) {
-  // Adapted from the original searcher.js for mdbook
-  // https://github.com/rust-lang/mdBook/blob/master/src/theme/searcher/searcher.js
-  const target = document.getElementById('content');
-  const marker = new Mark(target);
-
-  function doSearchOrMarkFromUrl() {
-    // Check current URL for search request
-    var url = new URL(window.location.href);
-    var urlParams = new URLSearchParams(url.search);
-
-    if (urlParams.has('search')) {
-      var words = JSON.parse(decodeURIComponent(urlParams.get('search')));
-      marker.mark(words);
-
-      var markers = document.querySelectorAll('mark');
-      function hide() {
-        for (var i = 0; i < markers.length; i++) {
-          markers[i].classList.add('fade-out');
-          window.setTimeout(function () { marker.unmark(); }, 300);
-        }
-      }
-      for (var i = 0; i < markers.length; i++) {
-        markers[i].addEventListener('click', hide);
-      }
-    }
-  }
-  doSearchOrMarkFromUrl();
-}
-</script>
-<p><span data-infisearch-part-title="User Guide"></span></p>
-<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="/infisearch/infisearch_assets/search-ui-light.css">
-<style>.light .infi-root,
-.rust .infi-root,
-.coal .infi-root,
-.navy .infi-root,
-.ayu .infi-root {
-    --infi-shadow: none;
-    --infi-border: 3px solid var(--table-header-bg);
-    --infi-bg: var(--bg);
-    --infi-triangle-bg: var(--table-header-bg);
-    --infi-item-box-shadow: 0 1px 5px rgba(196, 192, 187, 0.8);
-    --infi-title-fg: var(--fg);
-    --infi-title-hover-fg: var(--fg);
-    --infi-title-hover-bg: var(--table-header-bg);
-    --infi-title-border-bottom-hover: 2px solid var(--table-header-bg);
-    --infi-heading-fg: var(--fg);
-    --infi-heading-hover-fg: var(--fg);
-    --infi-body-fg: var(--fg);
-    --infi-body-hover-fg: var(--fg);
-    --infi-sub-bg: var(--bg);
-    --infi-highlight: var(--search-mark-bg);
-    --infi-highlight-bg: none;
-    --infi-header-fg: var(--fg);
-    --infi-checkbox-bg: #f8f8f8;
-    --infi-checkbox-checked-bg: #fff;
-    --infi-checkbox-border: #414141;
-    --infi-filter-header-active: var(--infi-title-bg);
-    --infi-error-fg: var(--fg);
-    --infi-fine-print-fg: var(--fg);
-    --infi-loading-bg: var(--fg);
-    --infi-loading-secondary-bg: var(--fg);
-    --infi-load-more-fg: var(--infi-title-fg);
-    --infi-load-more-bg: var(--infi-title-bg);
-    --infi-load-more-hover-fg: var(--infi-title-hover-fg);
-    --infi-load-more-hover-bg: var(--infi-title-hover-bg);
-    --infi-scrollbar-bg: none;
-    --infi-scrollbar-thumb-bg: var(--sidebar-non-existant);
-    --infi-fs-button-input-fg: var(--searchbar-shadow-color);
-    --infi-fs-border: 3px solid var(--sidebar-bg);
-    --infi-fs-box-shadow: none;
-    --infi-fs-header-bg: var(--sidebar-bg);
-    --infi-fs-header-box-shadow: none;
-    --infi-tip-table-header-border: var(--table-border-color);
-    --infi-tip-table-border: transparent;
-    --infi-tip-table-alternate: var(--table-alternate-bg);
-    --infi-tip-bg: var(--sidebar-bg);
-    --infi-tip-fg: var(--sidebar-fg);
-    --infi-tip-code-fg: var(--inline-code-color);
-    --infi-tip-code-bg: transparent;
-    --infi-tip-icon-bg: rgb(230, 230, 230);
-    --infi-tip-icon-fg: rgb(80, 80, 80);
-}
-
-.light .infi-root {
-    --infi-fs-header-close-fg: var(--searchresults-header-fg);
-    --infi-fs-header-close-hover-fg: var(--fg);
-}
-
-.ayu .infi-root,
-.rust .infi-root,
-.coal .infi-root,
-.navy .infi-root {
-    --infi-fs-header-close-fg: var(--sidebar-fg);
-    --infi-fs-header-close-hover-fg: white;
-}
-
-.ayu .infi-root,
-.rust .infi-root {
-    --infi-tip-code-fg: var(--search-mark-bg) !important;
-    --infi-tip-icon-bg: rgb(200, 200, 200);
-    --infi-tip-icon-fg: rgb(50, 50, 50);
-}
-
-.light .infi-root .infi-list-item.focus,
-.rust .infi-root .infi-list-item.focus,
-.coal .infi-root .infi-list-item.focus,
-.navy .infi-root .infi-list-item.focus,
-.ayu .infi-root .infi-list-item.focus {
-    outline: 2px solid grey;
-}
-
-.light .infi-root,
-.coal .infi-root,
-.navy .infi-root,
-.ayu .infi-root {
-    --infi-title-bg: var(--theme-hover);
-    --infi-sub-hover-bg: var(--table-alternate-bg);
-    --infi-title-border-bottom: 2px solid var(--theme-hover);
-}
-
-.light .infi-root {
-    --infi-highlight: #82a6c4;
-    --infi-sub-hover-bg: #ebebeb;
-}
-
-.rust .infi-root {
-    --infi-highlight: #bc8e6a;
-
-    --infi-tip-table-alternate: var(--sidebar-bg);
-    --infi-title-bg: var(--table-header-bg);
-    --infi-title-border-bottom: 2px solid var(--table-header-bg);
-
-    --infi-sub-hover-bg: #c6bbb1;
-    --infi-title-bg: #bbada1;
-    --infi-title-border-bottom: 2px solid #bbada1;
-    --infi-title-hover-fg: #000;
-    --infi-title-hover-bg: #a19488;
-    --infi-title-border-bottom-hover: 2px solid #a19488;
-    --infi-body-hover-fg: #1e1e1e;
-    --infi-heading-hover-fg: #1e1e1e;
-}
-
-.coal .infi-root {
-    --infi-highlight: #496c8a;
-    --infi-sub-hover-bg: #272a2b;
-}
-
-.infi-theme .infi-root .infi-tip-item code,
-.rust .infi-root .infi-tip-item code {
-    color: var(--infi-tip-code-fg) !important;;
-}
-
-.coal .infi-root,
-.navy .infi-root,
-.ayu .infi-root {
-    --infi-item-box-shadow: 0 1px 5px rgb(50, 50, 50);
-    --infi-fs-input-fg: var(--fg);
-    --infi-fs-input-focus-border: 2px solid #4f95cc;
-    --infi-fs-input-focus-box-shadow: 0 0 5px -1px #63baff;
-    --infi-key-fg: #fff;
-    --infi-key-bg: #7d7d7d;
-    --infi-checkbox-bg: #313233;
-    --infi-checkbox-checked-bg: #424243;
-    --infi-checkbox-border: #525354;
-}
-
-.rust .infi-root {
-    --infi-fs-input-fg: var(--sidebar-fg);
-    --infi-fs-input-bg: #29201d;
-    --infi-fs-input-border: 2px solid #584d4a;
-    --infi-fs-input-focus-border: 2px solid #4f95cc;
-    --infi-fs-input-focus-box-shadow: 0 0 5px -1px #63baff;
-}
-
-.coal .infi-root {
-    --infi-fs-input-bg: #1d1f21;
-    --infi-fs-input-border: 2px solid #3e4144;
-}
-
-.navy .infi-root {
-    --infi-fs-input-bg: #1e222f;
-    --infi-fs-input-border: 2px solid #3d4252;
-    --infi-sub-hover-bg: #242734;
-}
-
-.ayu .infi-root {
-    --infi-fs-input-fg: var(--fg);
-    --infi-fs-input-bg: #2b3035;
-    --infi-fs-input-border: 2px solid #43474c;
-    --infi-fs-input-focus-border: 2px solid #4f95cc;
-    --infi-fs-input-focus-box-shadow: 0 0 5px -1px #63baff;
-    --infi-sub-hover-bg: #282e35;
-}
-
-#infi-search {
-    width: 100%;
-    border-radius: 3px;
-    box-sizing: border-box;
-    padding: 10px 16px;
-    border: 1px solid var(--searchbar-border-color);
-    background: var(--searchbar-bg);
-    color: var(--searchbar-fg);
-}
-
-#infi-search:focus:not(.infi-button-input) {
-    box-shadow: 0 0 3px var(--searchbar-shadow-color);
-}
-
-#infi-search.infi-button-input {
-    width: 100px;
-}
-
-#infi-search.infi-button-input::placeholder {
-    position: relative;
-    left: 14px;
-}
-
-#infi-search.infi-button-input:hover {
-    transition: 0.3s ease-out;
-    background: var(--infi-fs-button-input-bg) !important;
-    outline: 2px solid var(--infi-fs-button-input-bg);
-}
-
-#infi-search.infi-button-input:hover::placeholder {
-    color: var(--infi-fs-button-input-fg) !important;
-}
-
-@media print {
-    #infi-search {
-        display: none;
-    }
-}
-
-#infisearch-mdbook-target {
-    position: relative;
-}
-
-/*
- * For this plugin, don't show the controls until there is a query.
- */
-#infisearch-mdbook-target.infi-empty-input > * {
-    display: none;
-}
-
-.infi-root:not(.infi-fs-root) {
-    display: block;
-}
-
-.light .infi-root .infi-title::after,
-.rust .infi-root .infi-title::after,
-.coal .infi-root .infi-title::after,
-.navy .infi-root .infi-title::after,
-.ayu .infi-root .infi-title::after {
-    content: none;
-    display: none;
-}
-
-.infi-header {
-    padding-bottom: 9px;
-}
-
-.infi-load-more {
-    padding: 7px 15px;
-}
-</style>
-<p><input
-    type="search"
-    id="infi-search"
-    placeholder="Search this book ..."
-/></p>
-<p><span style="font-weight: 600;"><!--preload weight 600--></span></p>
-<div id="infisearch-mdbook-target"></div>
-<h1 id="language-configuration"><a class="header" href="#language-configuration">Language Configuration</a></h1>
-<p>There are 3 language modules available. To configure these, you will need to serve the appropriate <a href="./getting_started.html#hosting-the-files">language bundle</a> in your HTML (or edit the CDN link accordingly), and edit the indexer configuration file.</p>
-<h2 id="ascii-tokenizer"><a class="header" href="#ascii-tokenizer">Ascii Tokenizer</a></h2>
-<h4 id="cdn-link-3"><a class="header" href="#cdn-link-3">CDN link</a></h4>
-<p>The default tokenizer splits on sentences, then whitespaces to obtain tokens.</p>
-<p>An <a href="https://github.com/tantivy-search/tantivy/blob/main/src/tokenizer/ascii_folding_filter.rs">asciiFoldingFilter</a> is then applied to these tokens, followed by punctuation and non-word-character boundary removal.</p>
-<pre><code class="language-json">{
-  &quot;lang&quot;: &quot;ascii&quot;,
-  &quot;options&quot;: {
-    &quot;stop_words&quot;: [
-      &quot;a&quot;, &quot;an&quot;, &quot;and&quot;, &quot;are&quot;, &quot;as&quot;, &quot;at&quot;, &quot;be&quot;, &quot;but&quot;, &quot;by&quot;, &quot;for&quot;,
-      &quot;if&quot;, &quot;in&quot;, &quot;into&quot;, &quot;is&quot;, &quot;it&quot;, &quot;no&quot;, &quot;not&quot;, &quot;of&quot;, &quot;on&quot;, &quot;or&quot;,
-      &quot;such&quot;, &quot;that&quot;, &quot;the&quot;, &quot;their&quot;, &quot;then&quot;, &quot;there&quot;, &quot;these&quot;,
-      &quot;they&quot;, &quot;this&quot;, &quot;to&quot;, &quot;was&quot;, &quot;will&quot;, &quot;with&quot;
-    ],
-    &quot;ignore_stop_words&quot;: false,
-
-    // Hard limit = 250
-    &quot;max_term_len&quot;: 80
-  }
-}
-</code></pre>
-<p><strong>CDN Link</strong></p>
-<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.9.1/packages/search-ui/dist/search-ui.ascii.bundle.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-<h2 id="latin-tokenizer"><a class="header" href="#latin-tokenizer">Latin Tokenizer</a></h2>
-<p>This is essentially the same as the ascii tokenizer, but adds a <code>stemmer</code> option.</p>
-<pre><code class="language-json">{
-  &quot;lang&quot;: &quot;latin&quot;,
-  &quot;options&quot;: {
-    // ----------------------------------
-    // Ascii Tokenizer options also apply
-    // ...
-    // ----------------------------------
-
-    // Any of the languages here
-    // https://docs.rs/rust-stemmers/1.2.0/rust_stemmers/enum.Algorithm.html
-    // Languages other than &quot;english&quot; have not been extensively tested. Use with caution!
-    &quot;stemmer&quot;: &quot;english&quot;
-  }
-}
-</code></pre>
-<p>If you do not need stemming, use the <code>ascii</code> tokenizer, which has a smaller wasm binary.</p>
-<p><strong>CDN Link</strong></p>
-<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.9.1/packages/search-ui/dist/search-ui.latin.bundle.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-<h2 id="chinese-tokenizer"><a class="header" href="#chinese-tokenizer">Chinese Tokenizer</a></h2>
-<p>This is a lightweight character-wise tokenizer, <strong>not</strong> based on word-based tokenizers like Jieba.</p>
-<p>You are highly recommended to keep positions indexed and query term proximity ranking turned on when using this tokenizer, in order to boost the relevance of documents with multi-character queries.</p>
-<pre><code class="language-json">{
-  &quot;lang&quot;: &quot;chinese&quot;,
-  &quot;options&quot;: {
-    &quot;stop_words&quot;: [],
-    &quot;ignore_stop_words&quot;: false,
-    &quot;max_term_len&quot;: 80
-  }
-}
-</code></pre>
-<p><strong>CDN Link</strong></p>
-<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.9.1/packages/search-ui/dist/search-ui.chinese.bundle.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-<h2 id="stop-words"><a class="header" href="#stop-words">Stop Words</a></h2>
-<p>All tokenizers support keeping (default) or removing stop words using the <code>ignore_stop_words</code> option.</p>
-<p>Keeping them enables the following:</p>
-<ul>
-<li>Processing phrase queries such as <code>&quot;for tomorrow&quot;</code> accurately; Stop words would be removed automatically from such queries.</li>
-<li>Boolean queries of stop words (e.g. <code>if AND forecast AND sunny</code>)</li>
-<li>More accurate ranking for free text queries, which uses stop words in term proximity ranking</li>
-</ul>
-<h2 id="ui-translations"><a class="header" href="#ui-translations">UI Translations</a></h2>
-<p>The UI’s text can also be overwritten.
-Refer to this <a href="https://github.com/ang-zeyu/infisearch/tree/main/packages/search-ui/src/translations/en.ts">link</a> for the default set of texts.</p>
-<pre><code class="language-ts">infisearch.init({
-  uiOptions: {
-    translations: { ... }
-  }
-})
-</code></pre>
-<div class="table-wrapper"><table><thead><tr><th>Option</th><th>Default</th><th>Description</th></tr></thead><tbody>
-<tr><td><code>resultsLabel</code></td><td><code>'Site results'</code></td><td>Accessibility label for the <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/listbox_role"><code>listbox</code></a> containing result previews. This is announced to screenreaders.</td></tr>
-<tr><td><code>fsButtonLabel</code></td><td><code>'Search'</code></td><td>Accessibility label for the original input element that functions as a button when the fullscreen UI is in use.</td></tr>
-<tr><td><code>fsButtonPlaceholder</code></td><td><code>undefined</code></td><td>Placeholder override for the provided <code>input</code> that functions as a button when the fullscreen UI is in use.</td></tr>
-<tr><td><code>fsPlaceholder</code></td><td><code>'Search this site'</code></td><td>Placeholder of the input element in the fullscreen UI.</td></tr>
-<tr><td><code>fsCloseText</code></td><td><code>'Close'</code></td><td>Text for the <kbd>Close</kbd> button.</td></tr>
-<tr><td><code>filtersButton</code></td><td><code>'Filters'</code></td><td>Text for the <kbd>Filters</kbd> button if any enum or numeric filters are configured.</td></tr>
-<tr><td><code>numResultsFound</code></td><td><code>' results found'</code></td><td>The text following the number of results found.</td></tr>
-<tr><td><code>startSearching</code></td><td><code>'Start Searching Above!'</code></td><td>Text shown when the input is empty.</td></tr>
-<tr><td><code>startingUp</code></td><td><code>'... Starting Up ...'</code></td><td>Text shown when InfiSearch is still not ready to perform any queries. The setup occurs extremely quickly, you will hopefully not be able to see this text most of the time.</td></tr>
-<tr><td><code>navigation</code></td><td><code>'Navigation'</code></td><td>Navigation controls text.</td></tr>
-<tr><td><code>tipHeader</code></td><td><code>'🔎 Advanced search tips'</code></td><td>Header of the tip popup.</td></tr>
-<tr><td><code>tip</code></td><td><code>'Tip'</code></td><td>First column header of the tip popup.</td></tr>
-<tr><td><code>example</code></td><td><code>'Example'</code></td><td>Second column header of the tip popup.</td></tr>
-<tr><td><code>tipRows.xx</code> (refer <a href="https://github.com/ang-zeyu/infisearch/tree/main/packages/search-ui/src/translations/en.ts">here</a>)</td><td></td><td>Examples for usage of InfiSearch’s advanced search syntax.</td></tr>
-<tr><td><code>error</code></td><td><code>'Oops! Something went wrong... 🙁'</code></td><td>Generic error text when something goes wrong</td></tr>
-</tbody></table>
-</div><script src="/infisearch/infisearch_assets/search-ui.ascii.bundle.js" type="text/javascript" charset="utf-8"></script>
 <script src="/infisearch/infisearch_assets/mark.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
 const base_url = '/infisearch/';
@@ -3440,18 +3049,18 @@ if (window.location.search) {
 <h2 id="adding-fields"><a class="header" href="#adding-fields">Adding Fields</a></h2>
 <p>You can add your own fields to index for free-text search, create categorical and/or numeric facet filters, and custom numeric sort orders.</p>
 <p>The user interface only incorporates the default set of fields in result highlighting however. If you need to incorporate additional fields, for example to display a icon beside each result, you can <a href="indexer/../search_configuration_renderers.html#rendering-search-results">alter</a> the HTML outputs, or use the <a href="indexer/../search_api.html">search API</a>.</p>
-<details>
-<summary>If don't need any of InfiSearch's default fields</summary>
-<p>You can also assign a value of <code>null</code> to remove it completely as a minor optimization.</p>
+<h4 id="removing-default-fields"><a class="header" href="#removing-default-fields">Removing Default Fields</a></h4>
+<p>If you are using InfiSearch as a general-purpose client side search tool, you can assign a value of <code>null</code> to remove default field definitions completely as a minor optimization.
+Alternatively, <code>merge_default_fields: false</code> removes all default field definitions.</p>
 <pre><code class="language-json">{
   &quot;fields_config&quot;: {
     &quot;fields&quot;: {
       &quot;h1&quot;: null
-    }
+    },
+    &quot;merge_default_fields&quot;: false
   }
 }
 </code></pre>
-</details>
 <h4 id="reserved-fields"><a class="header" href="#reserved-fields">Reserved Fields</a></h4>
 <p>Reserved fields are prefixed with an underscore <code>_</code>, and are hardcoded into the indexer to perform special functions.</p>
 <ul>
@@ -3459,7 +3068,7 @@ if (window.location.search) {
 <p><strong>_relative_fp</strong>: the relative path from your source folder to the file.</p>
 </li>
 <li>
-<p><strong>_add_files</strong>: This field allows you to <strong>index/combine multiple files</strong> as <strong>a single document</strong>, which can be useful for overriding or extending data.
+<p><strong>_add_files</strong>: This field allows you to <strong>index multiple files</strong> as <strong>a single document</strong>, which can be useful for overriding or extending data.
 See this <a href="indexer/./misc.html#indexing-multiple-files-under-one-document">section</a> under indexing for more details.</p>
 </li>
 </ul>
@@ -3476,8 +3085,8 @@ See this <a href="indexer/./misc.html#indexing-multiple-files-under-one-document
 <p>This parameter is a boost / penalty multiplied to a individual field’s score.</p>
 <p>Specifying <code>0.0</code> will also result in the field not being indexed into InfiSearch’s inverted index at all meaning that searching for any terms in this field will not show up any results. When used in combination with the <code>storage</code> parameter, the use case is to create a field that is only stored for custom sort orders, facet filters, or UI purposes (e.g. the <code>_relative_fp</code> field).</p>
 <p><code>k=1.2</code> &amp; <code>b=0.75</code></p>
-<p>These are Okapi BM25 model parameters that control the impact of term frequency and document lengths. The following <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/pluggable-similarites.html#bm25-tunability">article</a> provides a good overview on how to configure these, if needed.</p>
-<p>All fields except titles (<code>b=0.15</code>) and headings (<code>b=0.25</code>) use the above stated default parameters.</p>
+<p>These are scoring parameters that control the impact of term frequency and document lengths. The following <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/pluggable-similarites.html#bm25-tunability">article</a> provides a good overview on how to configure these, if needed.</p>
+<p>All default fields except titles and headings use the above default parameters.</p>
 <h2 id="field-storage"><a class="header" href="#field-storage">Field Storage</a></h2>
 <pre><code class="language-json">{
   &quot;fields_config&quot;: {
@@ -3863,9 +3472,9 @@ if (window.location.search) {
 /></p>
 <p><span style="font-weight: 600;"><!--preload weight 600--></span></p>
 <div id="infisearch-mdbook-target"></div>
-<h1 id="indexer-file-configuration"><a class="header" href="#indexer-file-configuration">Indexer File Configuration</a></h1>
-<p>The configurations in this section mainly specify <strong>how</strong> (mapping file contents to fields) and <strong>which</strong> files to index.</p>
-<p>InfiSearch’s defaults should be sufficient to index most HTML files, but if not, you can also configure how the content mapping is done. Enabling support for other file formats (e.g. JSON, CSV, PDF) files is also done here.</p>
+<h1 id="indexer-data-configuration"><a class="header" href="#indexer-data-configuration">Indexer Data Configuration</a></h1>
+<p>The configurations in this page specify <strong>how</strong> (mapping file data to fields) and <strong>which</strong> files to index.</p>
+<p>InfiSearch’s defaults are sufficient to index most HTML files, but if not, you can also configure how the content mapping is done. Enabling support for other file formats (e.g. JSON, CSV, PDF) files is also done here.</p>
 <h2 id="mapping-file-data-to-fields"><a class="header" href="#mapping-file-data-to-fields">Mapping File Data to Fields</a></h2>
 <pre><code class="language-json">{
   &quot;indexing_config&quot;: {
@@ -3906,6 +3515,12 @@ if (window.location.search) {
         &quot;field_name&quot;: &quot;body&quot;
       },
 
+      &quot;meta[name=\&quot;description\&quot;],meta[name=\&quot;keywords\&quot;]&quot;: {
+        &quot;attr_map&quot;: {
+          &quot;content&quot;: &quot;body&quot;
+        }
+      },
+
       // A convenient means to override the link used in the result preview
       // See &quot;Linking to other pages&quot; for more information
       &quot;span[data-infisearch-link]&quot;: {
@@ -3913,7 +3528,8 @@ if (window.location.search) {
           &quot;data-infisearch-link&quot;: &quot;link&quot;
         }
       }
-    }
+    },
+    &quot;merge_default_selectors&quot;: true
   }
 }
 </code></pre>
@@ -3939,7 +3555,7 @@ if (window.location.search) {
 </ol>
 <p>To <strong>exclude elements</strong> from indexing, use the <code>exclude_selectors</code> option, or add the in-built <code>data-infisearch-ignore</code> attribute to your HTML.</p>
 <p>If needed, you can also index <strong>HTML fragments</strong> that are incomplete documents (for example, documents which are missing the <code>&lt;head&gt;</code>). To match the entire fragment, use the <code>body</code> selector.</p>
-<p>Lastly, if you need to remove a default selector, simply replace its definition with <code>null</code>. For example, <code>&quot;h2,h3,h4,h5,h6&quot;: null</code>.</p>
+<p>Lastly, if you need to remove a default selector, simply replace its definition with <code>null</code>. For example, <code>&quot;h2,h3,h4,h5,h6&quot;: null</code>. Alternatively, specifying <code>&quot;merge_default_selectors&quot;: false</code> will remove all default selectors.</p>
 <h4 id="json-files-loadersjsonloader"><a class="header" href="#json-files-loadersjsonloader">JSON Files: <strong><code>loaders.JsonLoader</code></strong></a></h4>
 <pre><code class="language-json">&quot;loaders&quot;: {
   &quot;JsonLoader&quot;: {
@@ -3948,7 +3564,7 @@ if (window.location.search) {
       &quot;book_link&quot;: &quot;link&quot;,
       &quot;chapter_title&quot;: &quot;title&quot;
     },
-    // Order in which to index the keys of the json {} document
+    // Optional, order in which to index the keys of the json {} document
     &quot;field_order&quot;: [
       &quot;book_link&quot;,
       &quot;chapter_title&quot;,
@@ -3969,9 +3585,8 @@ The <code>field_order</code> array controls the order in which the data keys are
   &quot;CsvLoader&quot;: {
     // ---------------------
     // Map data using CSV headers
-    &quot;use_headers&quot;: false,
     &quot;header_field_map&quot;: {},
-    &quot;header_field_order&quot;: [],
+    &quot;header_field_order&quot;: [],            // Optional, order to index the columns
     // ---------------------
     // Or with header indices
     &quot;index_field_map&quot;: {
@@ -3980,7 +3595,7 @@ The <code>field_order</code> array controls the order in which the data keys are
       &quot;2&quot;: &quot;body&quot;,
       &quot;4&quot;: &quot;heading&quot;
     },
-    &quot;index_field_order&quot;: [1, 4, 2, 0],
+    &quot;index_field_order&quot;: [1, 4, 2, 0],   // Optional, order to index the columns
     // ---------------------
     // Options for csv parsing, from the Rust &quot;csv&quot; crate
     &quot;parse_options&quot;: {
@@ -3994,8 +3609,8 @@ The <code>field_order</code> array controls the order in which the data keys are
   }
 }
 </code></pre>
-<p>Field mappings for CSV files can be configured using one of the <code>field_map / field_order</code> key pairs. The <code>use_headers</code> parameter specifies which of the two pairs of settings to use.</p>
-<p>The <code>parse_options</code> key specifies options for parsing the csv file. In particular, note that the <code>has_headers</code> key is distinct from and does not influence the <code>use_headers</code> parameter.</p>
+<p>Field mappings for CSV files can be configured using one of the <code>field_map</code> keys. The <code>field_order</code> arrays controls the order columns are indexed.</p>
+<p>The <code>parse_options</code> key specifies options for parsing the csv file.</p>
 <h4 id="pdf-files-loaderspdfloader"><a class="header" href="#pdf-files-loaderspdfloader">PDF Files: <strong><code>loaders.PdfLoader</code></strong></a></h4>
 <pre><code class="language-json">&quot;loaders&quot;: {
   &quot;PdfLoader&quot;: {
@@ -4341,54 +3956,49 @@ if (window.location.search) {
 <div id="infisearch-mdbook-target"></div>
 <h1 id="indexer-misc-configuration"><a class="header" href="#indexer-misc-configuration">Indexer Misc Configuration</a></h1>
 <h2 id="indexing-positions"><a class="header" href="#indexing-positions">Indexing Positions</a></h2>
-<p><strong><code>with_positions = true</code></strong></p>
-<p>This option controls whether positions will be stored.</p>
-<p>Features such as phrase queries that require positional information will not work if this is disabled.</p>
-<p>Turning this off for very large collections (~&gt; 1GB) can increase the tool’s scalability, at the cost of such features.</p>
-<h2 id="indexer-performance"><a class="header" href="#indexer-performance">Indexer Performance</a></h2>
 <pre><code class="language-json">{
   &quot;indexing_config&quot;: {
-    &quot;num_threads&quot;: &lt;number of physical cpus&gt; - 1
+    &quot;with_positions&quot;: true
   }
 }
 </code></pre>
-<p>This is the number of threads to use, excluding the main thread. When unspecified, this is <code>max(min(num physical cores, num logical cores) - 1, 1)</code>.</p>
+<p>This option controls if positions are stored.
+Features such as phrase queries that require positional information will not work if this is disabled.
+Turning this off for very large collections (~&gt; 1GB) can increase the tool’s scalability, at the cost of such features.</p>
+<h2 id="indexer-thread-count"><a class="header" href="#indexer-thread-count">Indexer Thread Count</a></h2>
+<pre><code class="language-json">{
+  &quot;indexing_config&quot;: {
+    &quot;num_threads&quot;: max(min(physical cores, logical cores) - 1, 1)
+  }
+}
+</code></pre>
 <h2 id="indexing-multiple-files-under-one-document"><a class="header" href="#indexing-multiple-files-under-one-document">Indexing Multiple Files Under One Document</a></h2>
 <p>InfiSearch regards each file as a single document by default. You can index <strong>multiple files</strong> into <strong>one document</strong> using the reserved field <a href="indexer/./fields.html#reserved-fields"><code>_add_files</code></a>. This is useful if you need to override or add data but can’t modify the source document easily.</p>
-<h4 id="example-overriding-a-documents-title"><a class="header" href="#example-overriding-a-documents-title">Example: Overriding a Document’s Title</a></h4>
+<p>Overrides should be provided with JSON, CSV, or HTML files, as TXT and PDF files have no reliable way of supplying the <code>_add_files</code> field. In addition, you will need to manually map the CSV data to the <code>_add_files</code> field. This is automatically done for JSON and <a href="indexer/../linking_to_others.html">HTML</a> files.</p>
+<h4 id="example-overriding-a-documents-link-with-another-file"><a class="header" href="#example-overriding-a-documents-link-with-another-file">Example: Overriding a Document’s Link With Another File</a></h4>
 <p>Suppose you have the following files:</p>
 <pre><code>folder
 |-- main.html
 |-- overrides.json
 </code></pre>
-<p>To index <code>main.html</code> and override its title, you would have:</p>
-<p>1) Inside <code>overrides.json</code>,</p>
+<p>To index <code>main.html</code> and override its link, you would have:</p>
+<p><code>overrides.json</code></p>
 <pre><code class="language-json">{
-  &quot;title&quot;: &quot;Title Override&quot;,
+  &quot;link&quot;: &quot;https://infi-search.com&quot;,
   &quot;_add_files&quot;: &quot;./main.html&quot;
 }
 </code></pre>
-<p>2) Inside your indexer configuration file:</p>
+<p>Indexer Configuration</p>
 <pre><code class="language-json">{
   &quot;indexing_config&quot;: {
     &quot;exclude&quot;: [&quot;main.html&quot;]
   }
 }
 </code></pre>
-<p>This excludes indexing <code>main.html</code> directly, but does so through <code>overrides.json</code>. As the user interface uses the first title it sees, the title is overwritten.</p>
-<h4 id="example-overriding-a-documents-link"><a class="header" href="#example-overriding-a-documents-link">Example: Overriding a Document’s Link</a></h4>
-<p>Another example use case might be to redirect to another domain using the <a href="indexer/./fields.html#default-field-configuration"><code>link</code> field</a>:</p>
-<pre><code class="language-json">{
-  &quot;link&quot;: &quot;https://infi-search.com&quot;,
-  &quot;_add_files&quot;: &quot;./main.html&quot;
-}
-</code></pre>
-<blockquote>
-<p>Overrides should be provided with JSON, CSV, or HTML files, as TXT and PDF files have no reliable way of supplying the <code>_add_files</code> field. In addition, you will need to manually map the CSV data to the <code>_add_files</code> field. This is automatically done for JSON and <a href="indexer/../linking_to_others.html">HTML</a> files.</p>
-</blockquote>
+<p>This excludes indexing <code>main.html</code> directly, but does so through <code>overrides.json</code>.</p>
 <h2 id="larger-collections"><a class="header" href="#larger-collections">Larger Collections</a></h2>
 <blockquote>
-<p>⚠️ This section is mostly for reference, use the preconfigured <a href="indexer/../larger_collections.html">scaling presets</a> if possible.</p>
+<p>⚠️ This section serves as a reference, prefer the preconfigured <a href="indexer/../larger_collections.html">scaling presets</a> if possible.</p>
 </blockquote>
 <p><strong>Field Configuration</strong></p>
 <pre><code class="language-json">{
@@ -4404,19 +4014,427 @@ if (window.location.search) {
 }
 </code></pre>
 <h4 id="field-store-caching-cache_all_field_stores"><a class="header" href="#field-store-caching-cache_all_field_stores">Field Store Caching: <strong><code>cache_all_field_stores</code></strong></a></h4>
-<p>This is the same option as the one under <a href="indexer/../search_configuration.html#search-functionality-options">search functionality options</a>.
-If both are specified, the value specified in the <code>infisearch.init</code> takes priority.</p>
-<p>All fields specified with <code>storage=[{ &quot;type&quot;: &quot;text&quot; }]</code> are cached up front on initialisation when this is enabled.</p>
+<p>All fields specified with <code>storage=[{ &quot;type&quot;: &quot;text&quot; }]</code> are cached up front when this is enabled.
+This is the same option as the one under <a href="indexer/../search_configuration.html#search-functionality-options">search functionality options</a>, and has lower priority.</p>
 <h4 id="field-store-granularity-num_docs_per_store"><a class="header" href="#field-store-granularity-num_docs_per_store">Field Store Granularity: <code>num_docs_per_store</code></a></h4>
-<p>The <code>num_docs_per_store</code> parameter controls how many documents to store in one JSON file. Batching multiple files together if the fields stored are small can lead to less files and better browser caching.</p>
+<p>The <code>num_docs_per_store</code> parameter controls how many documents’ texts to store in one JSON file. Batching multiple files together increases file size but can lead to less files and better browser caching.</p>
 <h4 id="index-shard-size-pl_limit"><a class="header" href="#index-shard-size-pl_limit">Index Shard Size: <strong><code>pl_limit</code></strong></a></h4>
-<p>This is the main threshold parameter (in bytes) at which to “cut” index (<strong>pl</strong> meaning <a href="https://en.wikipedia.org/wiki/Inverted_index">postings list</a>) files.</p>
-<p>Increasing this value produces less but bigger files (which may take longer to retrieve), and vice versa.</p>
-<p>Increasing the value may also be useful for caching when used in conjunction with <code>pl_cache_threshold</code> below, since fewer index files will be produced.</p>
+<p>This is a threshold (in bytes) at which to “cut” index (<strong>pl</strong> meaning <a href="https://en.wikipedia.org/wiki/Inverted_index">postings list</a>) chunks.
+Increasing this produces less but bigger chunks (which take longer to retrieve).</p>
 <h4 id="index-caching-pl_cache_threshold"><a class="header" href="#index-caching-pl_cache_threshold">Index Caching: <strong><code>pl_cache_threshold</code></strong></a></h4>
-<p>Index files that exceed this number will be cached by the search library at initilisation.</p>
-<p>It can be used to configure InfiSearch for response time (over scalability) for some use cases. This is discussed in more detail in <a href="indexer/../larger_collections.html">Larger Collections</a>.</p>
+<p>Index chunks that exceed this size (in bytes) are cached by the search library on initilisation.
+It is used to configure InfiSearch for response time (over scalability) for typical use cases.</p>
 <script src="/infisearch/infisearch_assets/search-ui.ascii.bundle.js" type="text/javascript" charset="utf-8"></script>
+<script src="/infisearch/infisearch_assets/mark.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+const base_url = '/infisearch/';
+const mode = (function () {
+                // This IIFE is documentation specific, for demoing the different modes.
+                // It would be the string mode (e.g. 'target') normally
+                const params = new URLSearchParams(window.location.search);
+                return params.get('mode') || 'target';
+            })();
+infisearch.init({
+  searcherOptions: {
+    url: base_url + 'infisearch_output/',
+  },
+  uiOptions: {
+    mode,
+    dropdownAlignment: 'bottom-start',
+    target: document.getElementById('infisearch-mdbook-target'),
+    fsButtonPlaceholder: 'Search',
+    sourceFilesUrl: base_url,
+    resultsRenderOpts: {
+      searchedTermsParam: 'search',
+    },
+    multiSelectFilters: [
+      { fieldName: 'partTitle', displayName: 'Section', defaultOptName: 'None' },
+    ],
+  },
+});
+
+document.getElementById('infi-search').addEventListener('keydown', (ev) => {
+  if (['ArrowLeft', 'ArrowRight'].includes(ev.key)) {
+    ev.stopPropagation(); // used in global listener to change pages
+    return;
+  }
+});
+
+if (window.location.search) {
+  // Adapted from the original searcher.js for mdbook
+  // https://github.com/rust-lang/mdBook/blob/master/src/theme/searcher/searcher.js
+  const target = document.getElementById('content');
+  const marker = new Mark(target);
+
+  function doSearchOrMarkFromUrl() {
+    // Check current URL for search request
+    var url = new URL(window.location.href);
+    var urlParams = new URLSearchParams(url.search);
+
+    if (urlParams.has('search')) {
+      var words = JSON.parse(decodeURIComponent(urlParams.get('search')));
+      marker.mark(words);
+
+      var markers = document.querySelectorAll('mark');
+      function hide() {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].classList.add('fade-out');
+          window.setTimeout(function () { marker.unmark(); }, 300);
+        }
+      }
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].addEventListener('click', hide);
+      }
+    }
+  }
+  doSearchOrMarkFromUrl();
+}
+</script>
+<p><span data-infisearch-part-title="User Guide"></span></p>
+<div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="/infisearch/infisearch_assets/search-ui-light.css">
+<style>.light .infi-root,
+.rust .infi-root,
+.coal .infi-root,
+.navy .infi-root,
+.ayu .infi-root {
+    --infi-shadow: none;
+    --infi-border: 3px solid var(--table-header-bg);
+    --infi-bg: var(--bg);
+    --infi-triangle-bg: var(--table-header-bg);
+    --infi-item-box-shadow: 0 1px 5px rgba(196, 192, 187, 0.8);
+    --infi-title-fg: var(--fg);
+    --infi-title-hover-fg: var(--fg);
+    --infi-title-hover-bg: var(--table-header-bg);
+    --infi-title-border-bottom-hover: 2px solid var(--table-header-bg);
+    --infi-heading-fg: var(--fg);
+    --infi-heading-hover-fg: var(--fg);
+    --infi-body-fg: var(--fg);
+    --infi-body-hover-fg: var(--fg);
+    --infi-sub-bg: var(--bg);
+    --infi-highlight: var(--search-mark-bg);
+    --infi-highlight-bg: none;
+    --infi-header-fg: var(--fg);
+    --infi-checkbox-bg: #f8f8f8;
+    --infi-checkbox-checked-bg: #fff;
+    --infi-checkbox-border: #414141;
+    --infi-filter-header-active: var(--infi-title-bg);
+    --infi-error-fg: var(--fg);
+    --infi-fine-print-fg: var(--fg);
+    --infi-loading-bg: var(--fg);
+    --infi-loading-secondary-bg: var(--fg);
+    --infi-load-more-fg: var(--infi-title-fg);
+    --infi-load-more-bg: var(--infi-title-bg);
+    --infi-load-more-hover-fg: var(--infi-title-hover-fg);
+    --infi-load-more-hover-bg: var(--infi-title-hover-bg);
+    --infi-scrollbar-bg: none;
+    --infi-scrollbar-thumb-bg: var(--sidebar-non-existant);
+    --infi-fs-button-input-fg: var(--searchbar-shadow-color);
+    --infi-fs-border: 3px solid var(--sidebar-bg);
+    --infi-fs-box-shadow: none;
+    --infi-fs-header-bg: var(--sidebar-bg);
+    --infi-fs-header-box-shadow: none;
+    --infi-tip-table-header-border: var(--table-border-color);
+    --infi-tip-table-border: transparent;
+    --infi-tip-table-alternate: var(--table-alternate-bg);
+    --infi-tip-bg: var(--sidebar-bg);
+    --infi-tip-fg: var(--sidebar-fg);
+    --infi-tip-code-fg: var(--inline-code-color);
+    --infi-tip-code-bg: transparent;
+    --infi-tip-icon-bg: rgb(230, 230, 230);
+    --infi-tip-icon-fg: rgb(80, 80, 80);
+}
+
+.light .infi-root {
+    --infi-fs-header-close-fg: var(--searchresults-header-fg);
+    --infi-fs-header-close-hover-fg: var(--fg);
+}
+
+.ayu .infi-root,
+.rust .infi-root,
+.coal .infi-root,
+.navy .infi-root {
+    --infi-fs-header-close-fg: var(--sidebar-fg);
+    --infi-fs-header-close-hover-fg: white;
+}
+
+.ayu .infi-root,
+.rust .infi-root {
+    --infi-tip-code-fg: var(--search-mark-bg) !important;
+    --infi-tip-icon-bg: rgb(200, 200, 200);
+    --infi-tip-icon-fg: rgb(50, 50, 50);
+}
+
+.light .infi-root .infi-list-item.focus,
+.rust .infi-root .infi-list-item.focus,
+.coal .infi-root .infi-list-item.focus,
+.navy .infi-root .infi-list-item.focus,
+.ayu .infi-root .infi-list-item.focus {
+    outline: 2px solid grey;
+}
+
+.light .infi-root,
+.coal .infi-root,
+.navy .infi-root,
+.ayu .infi-root {
+    --infi-title-bg: var(--theme-hover);
+    --infi-sub-hover-bg: var(--table-alternate-bg);
+    --infi-title-border-bottom: 2px solid var(--theme-hover);
+}
+
+.light .infi-root {
+    --infi-highlight: #82a6c4;
+    --infi-sub-hover-bg: #ebebeb;
+}
+
+.rust .infi-root {
+    --infi-highlight: #bc8e6a;
+
+    --infi-tip-table-alternate: var(--sidebar-bg);
+    --infi-title-bg: var(--table-header-bg);
+    --infi-title-border-bottom: 2px solid var(--table-header-bg);
+
+    --infi-sub-hover-bg: #c6bbb1;
+    --infi-title-bg: #bbada1;
+    --infi-title-border-bottom: 2px solid #bbada1;
+    --infi-title-hover-fg: #000;
+    --infi-title-hover-bg: #a19488;
+    --infi-title-border-bottom-hover: 2px solid #a19488;
+    --infi-body-hover-fg: #1e1e1e;
+    --infi-heading-hover-fg: #1e1e1e;
+}
+
+.coal .infi-root {
+    --infi-highlight: #496c8a;
+    --infi-sub-hover-bg: #272a2b;
+}
+
+.infi-theme .infi-root .infi-tip-item code,
+.rust .infi-root .infi-tip-item code {
+    color: var(--infi-tip-code-fg) !important;;
+}
+
+.coal .infi-root,
+.navy .infi-root,
+.ayu .infi-root {
+    --infi-item-box-shadow: 0 1px 5px rgb(50, 50, 50);
+    --infi-fs-input-fg: var(--fg);
+    --infi-fs-input-focus-border: 2px solid #4f95cc;
+    --infi-fs-input-focus-box-shadow: 0 0 5px -1px #63baff;
+    --infi-key-fg: #fff;
+    --infi-key-bg: #7d7d7d;
+    --infi-checkbox-bg: #313233;
+    --infi-checkbox-checked-bg: #424243;
+    --infi-checkbox-border: #525354;
+}
+
+.rust .infi-root {
+    --infi-fs-input-fg: var(--sidebar-fg);
+    --infi-fs-input-bg: #29201d;
+    --infi-fs-input-border: 2px solid #584d4a;
+    --infi-fs-input-focus-border: 2px solid #4f95cc;
+    --infi-fs-input-focus-box-shadow: 0 0 5px -1px #63baff;
+}
+
+.coal .infi-root {
+    --infi-fs-input-bg: #1d1f21;
+    --infi-fs-input-border: 2px solid #3e4144;
+}
+
+.navy .infi-root {
+    --infi-fs-input-bg: #1e222f;
+    --infi-fs-input-border: 2px solid #3d4252;
+    --infi-sub-hover-bg: #242734;
+}
+
+.ayu .infi-root {
+    --infi-fs-input-fg: var(--fg);
+    --infi-fs-input-bg: #2b3035;
+    --infi-fs-input-border: 2px solid #43474c;
+    --infi-fs-input-focus-border: 2px solid #4f95cc;
+    --infi-fs-input-focus-box-shadow: 0 0 5px -1px #63baff;
+    --infi-sub-hover-bg: #282e35;
+}
+
+#infi-search {
+    width: 100%;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 10px 16px;
+    border: 1px solid var(--searchbar-border-color);
+    background: var(--searchbar-bg);
+    color: var(--searchbar-fg);
+}
+
+#infi-search:focus:not(.infi-button-input) {
+    box-shadow: 0 0 3px var(--searchbar-shadow-color);
+}
+
+#infi-search.infi-button-input {
+    width: 100px;
+}
+
+#infi-search.infi-button-input::placeholder {
+    position: relative;
+    left: 14px;
+}
+
+#infi-search.infi-button-input:hover {
+    transition: 0.3s ease-out;
+    background: var(--infi-fs-button-input-bg) !important;
+    outline: 2px solid var(--infi-fs-button-input-bg);
+}
+
+#infi-search.infi-button-input:hover::placeholder {
+    color: var(--infi-fs-button-input-fg) !important;
+}
+
+@media print {
+    #infi-search {
+        display: none;
+    }
+}
+
+#infisearch-mdbook-target {
+    position: relative;
+}
+
+/*
+ * For this plugin, don't show the controls until there is a query.
+ */
+#infisearch-mdbook-target.infi-empty-input > * {
+    display: none;
+}
+
+.infi-root:not(.infi-fs-root) {
+    display: block;
+}
+
+.light .infi-root .infi-title::after,
+.rust .infi-root .infi-title::after,
+.coal .infi-root .infi-title::after,
+.navy .infi-root .infi-title::after,
+.ayu .infi-root .infi-title::after {
+    content: none;
+    display: none;
+}
+
+.infi-header {
+    padding-bottom: 9px;
+}
+
+.infi-load-more {
+    padding: 7px 15px;
+}
+</style>
+<p><input
+    type="search"
+    id="infi-search"
+    placeholder="Search this book ..."
+/></p>
+<p><span style="font-weight: 600;"><!--preload weight 600--></span></p>
+<div id="infisearch-mdbook-target"></div>
+<h1 id="language-configuration"><a class="header" href="#language-configuration">Language Configuration</a></h1>
+<p>There are 3 language modules available. To configure these, you will need to serve the appropriate <a href="./getting_started.html#hosting-the-files">language bundle</a> in your HTML (or edit the CDN link accordingly), and edit the indexer configuration file.</p>
+<pre><code class="language-json">{
+  &quot;lang_config&quot;: {
+    // ... options go here ...
+  }
+}
+</code></pre>
+<h2 id="ascii-tokenizer"><a class="header" href="#ascii-tokenizer">Ascii Tokenizer</a></h2>
+<p>The default tokenizer should work for any language that relies on ASCII characters, or their inflections (e.g. “á”).</p>
+<p>The text is first split into on sentences, then whitespaces to obtain tokens. An <a href="https://github.com/tantivy-search/tantivy/blob/main/src/tokenizer/ascii_folding_filter.rs">asciiFoldingFilter</a> is then applied to normalize diacritics, followed by punctuation and non-word-character boundary removal.</p>
+<pre><code class="language-json">{
+  &quot;lang&quot;: &quot;ascii&quot;,
+  &quot;options&quot;: {
+    &quot;stop_words&quot;: [
+      &quot;a&quot;, &quot;an&quot;, &quot;and&quot;, &quot;are&quot;, &quot;as&quot;, &quot;at&quot;, &quot;be&quot;, &quot;but&quot;, &quot;by&quot;, &quot;for&quot;,
+      &quot;if&quot;, &quot;in&quot;, &quot;into&quot;, &quot;is&quot;, &quot;it&quot;, &quot;no&quot;, &quot;not&quot;, &quot;of&quot;, &quot;on&quot;, &quot;or&quot;,
+      &quot;such&quot;, &quot;that&quot;, &quot;the&quot;, &quot;their&quot;, &quot;then&quot;, &quot;there&quot;, &quot;these&quot;,
+      &quot;they&quot;, &quot;this&quot;, &quot;to&quot;, &quot;was&quot;, &quot;will&quot;, &quot;with&quot;
+    ],
+    &quot;ignore_stop_words&quot;: false,
+
+    // Hard limit = 250
+    &quot;max_term_len&quot;: 80
+  }
+}
+</code></pre>
+<p><strong>CDN Link</strong></p>
+<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui.ascii.bundle.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="ascii-tokenizer-with-stemmer"><a class="header" href="#ascii-tokenizer-with-stemmer">Ascii Tokenizer with Stemmer</a></h2>
+<p>This is essentially the same as the ascii tokenizer, but adds a <code>stemmer</code> option.</p>
+<pre><code class="language-json">{
+  &quot;lang&quot;: &quot;ascii_stemmer&quot;,
+  &quot;options&quot;: {
+    // ----------------------------------
+    // Ascii Tokenizer options also apply
+    // ...
+    // ----------------------------------
+
+    // Any of the languages here
+    // https://docs.rs/rust-stemmers/1.2.0/rust_stemmers/enum.Algorithm.html
+    // Languages other than &quot;english&quot; have not been extensively tested. Use with caution!
+    &quot;stemmer&quot;: &quot;english&quot;
+  }
+}
+</code></pre>
+<p>If you do not need stemming, use the <code>ascii</code> tokenizer, which has a smaller wasm binary.</p>
+<p><strong>CDN Link</strong></p>
+<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui.ascii-stemmer.bundle.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="chinese-tokenizer"><a class="header" href="#chinese-tokenizer">Chinese Tokenizer</a></h2>
+<p>This is a lightweight character-wise tokenizer, <strong>not</strong> based on word-based tokenizers like Jieba.</p>
+<p>You are highly recommended to keep positions indexed and query term proximity ranking turned on when using this tokenizer, in order to boost the relevance of documents with multi-character queries.</p>
+<pre><code class="language-json">{
+  &quot;lang&quot;: &quot;chinese&quot;,
+  &quot;options&quot;: {
+    &quot;stop_words&quot;: [],
+    &quot;ignore_stop_words&quot;: false,
+    &quot;max_term_len&quot;: 80
+  }
+}
+</code></pre>
+<p><strong>CDN Link</strong></p>
+<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui.chinese.bundle.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="stop-words"><a class="header" href="#stop-words">Stop Words</a></h2>
+<p>All tokenizers support keeping (default) or removing stop words using the <code>ignore_stop_words</code> option.</p>
+<p>Keeping them enables the following:</p>
+<ul>
+<li>Processing phrase queries such as <code>&quot;for tomorrow&quot;</code> accurately; Stop words would be removed automatically from such queries.</li>
+<li>Boolean queries of stop words (e.g. <code>if AND forecast AND sunny</code>)</li>
+<li>More accurate ranking for free text queries, which uses stop words in term proximity ranking</li>
+</ul>
+<h2 id="ui-translations"><a class="header" href="#ui-translations">UI Translations</a></h2>
+<p>The UI’s text can also be overwritten.
+Refer to this <a href="https://github.com/ang-zeyu/infisearch/tree/main/packages/search-ui/src/translations/en.ts">link</a> for the default set of texts.</p>
+<pre><code class="language-ts">infisearch.init({
+  uiOptions: {
+    translations: { ... }
+  }
+})
+</code></pre>
+<div class="table-wrapper"><table><thead><tr><th>Option</th><th>Default</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>resultsLabel</code></td><td><code>'Site results'</code></td><td>Accessibility label for the <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/listbox_role"><code>listbox</code></a> containing result previews. This is announced to screenreaders.</td></tr>
+<tr><td><code>fsButtonLabel</code></td><td><code>'Search'</code></td><td>Accessibility label for the original input element that functions as a button when the fullscreen UI is in use.</td></tr>
+<tr><td><code>fsButtonPlaceholder</code></td><td><code>undefined</code></td><td>Placeholder override for the provided <code>input</code> that functions as a button when the fullscreen UI is in use.</td></tr>
+<tr><td><code>fsPlaceholder</code></td><td><code>'Search this site'</code></td><td>Placeholder of the input element in the fullscreen UI.</td></tr>
+<tr><td><code>fsCloseText</code></td><td><code>'Close'</code></td><td>Text for the <kbd>Close</kbd> button.</td></tr>
+<tr><td><code>filtersButton</code></td><td><code>'Filters'</code></td><td>Text for the <kbd>Filters</kbd> button if any enum or numeric filters are configured.</td></tr>
+<tr><td><code>numResultsFound</code></td><td><code>' results found'</code></td><td>The text following the number of results found.</td></tr>
+<tr><td><code>startSearching</code></td><td><code>'Start Searching Above!'</code></td><td>Text shown when the input is empty.</td></tr>
+<tr><td><code>startingUp</code></td><td><code>'... Starting Up ...'</code></td><td>Text shown when InfiSearch is still not ready to perform any queries. The setup occurs extremely quickly, you will hopefully not be able to see this text most of the time.</td></tr>
+<tr><td><code>navigation</code></td><td><code>'Navigation'</code></td><td>Navigation controls text.</td></tr>
+<tr><td><code>sortBy</code></td><td><code>'Sort by'</code></td><td>Header text for custom <a href="./search_configuration.html#setting-up-numeric-filters-and-sort-orders">sort orders</a>.</td></tr>
+<tr><td><code>tipHeader</code></td><td><code>'🔎 Advanced search tips'</code></td><td>Header of the tip popup.</td></tr>
+<tr><td><code>tip</code></td><td><code>'Tip'</code></td><td>First column header of the tip popup.</td></tr>
+<tr><td><code>example</code></td><td><code>'Example'</code></td><td>Second column header of the tip popup.</td></tr>
+<tr><td><code>tipRows.xx</code> (refer <a href="https://github.com/ang-zeyu/infisearch/tree/main/packages/search-ui/src/translations/en.ts">here</a>)</td><td></td><td>Examples for usage of InfiSearch’s advanced search syntax.</td></tr>
+<tr><td><code>error</code></td><td><code>'Oops! Something went wrong... 🙁'</code></td><td>Generic error text when something goes wrong</td></tr>
+</tbody></table>
+</div><script src="/infisearch/infisearch_assets/search-ui.ascii.bundle.js" type="text/javascript" charset="utf-8"></script>
 <script src="/infisearch/infisearch_assets/mark.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
 const base_url = '/infisearch/';
@@ -4791,7 +4809,7 @@ if (window.location.search) {
   },
 });
 </code></pre>
-<p>Sort document results using <a href="./indexer/fields.html#field-storage">numeric fields</a> instead of using relevance. Results are still tie-broken by their relevance.</p>
+<p>Sort document results using <a href="./indexer/fields.html#field-storage">numeric fields</a>. Results are tie-broken by their relevance.</p>
 <pre><code class="language-ts">const query: Query = await searcher.runQuery('weather', {
   sort: 'pageViews',     // where 'pageViews' is the name of the field
   sortAscending: false,  // the default is to sort in descending order
@@ -4801,7 +4819,7 @@ if (window.location.search) {
 <p>Running a query alone probably isn’t very useful. You can get a <code>Result</code> object using the <code>getNextN</code> function.</p>
 <pre><code class="language-ts">const results: Result[] = await query.getNextN(10);
 </code></pre>
-<p>A <code>Result</code> object stores the fields of the indexed document.</p>
+<p>A <code>Result</code> object stores the <a href="./indexer/fields.html#field-storage">fields</a> of the indexed document.</p>
 <pre><code class="language-ts">const fields = results[0].fields;
 
 &gt; console.log(fields)
@@ -4820,18 +4838,20 @@ if (window.location.search) {
     reporter: null,
   },
   numbers: {
-    // These are bigints
-    datePosted: 1671336914,
+    datePosted: 1671336914n,
   }
 }
 </code></pre>
 <ul>
 <li>
-<p><code>texts</code>: fields are stored as an array of <code>[fieldName, fieldText]</code> pairs in the order they were seen.</p>
+<p><code>texts</code>: an array of <code>[fieldName, fieldText]</code> pairs stored in the order they were seen.</p>
 <p>This ordered model is more complex than a regular key-value store, but enables the detailed content hierarchy you see in InfiSearch’s UI: <em>Title &gt; Heading &gt; Text under heading</em></p>
 </li>
 <li>
-<p><code>enums</code>: This stores the enum values of the document. Documents missing specific enum values will be assigned <code>null</code>.</p>
+<p><code>enums</code>: stores the enum values of the document. Documents missing enum values are assigned <code>null</code>.</p>
+</li>
+<li>
+<p><code>numbers</code>: <code>u64</code> fields returned as Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt"><code>BigInt</code></a> values.</p>
 </li>
 </ul>
 <h2 id="memory-management"><a class="header" href="#memory-management">Memory Management</a></h2>
@@ -4842,10 +4862,10 @@ if (window.location.search) {
 <p>Search interfaces usually live for the entire lifetime of the application. If you need to do so however, you should also free the <code>Searcher</code> instance:</p>
 <pre><code class="language-ts">searcher.free();
 </code></pre>
-<h2 id="convenience-methods"><a class="header" href="#convenience-methods">Convenience Methods</a></h2>
+<h2 id="ui-convenience-methods"><a class="header" href="#ui-convenience-methods">UI Convenience Methods</a></h2>
 <p>A <code>Result</code> object also exposes 2 other convenience functions that may be useful to help deal with the positional format of the <code>text</code> type field stores.</p>
 <h3 id="1-retrieving-singular-fields-as-kv-stores"><a class="header" href="#1-retrieving-singular-fields-as-kv-stores">1. Retrieving Singular Fields as KV Stores</a></h3>
-<p>Certain fields will only occur once in every document (e.g. titles, <code>&lt;h1&gt;</code> tags). To retrieve these easily, you can use the <code>getKVFields</code> method:</p>
+<p>Certain fields will only occur once in every document (e.g. titles, <code>&lt;h1&gt;</code> tags). To retrieve these easily, use the <code>getKVFields</code> method:</p>
 <pre><code class="language-ts">const kvFields = result.getKVFields('link', '_relative_fp', 'title', 'h1');
 
 &gt; console.log(kvFields)
@@ -4857,13 +4877,13 @@ if (window.location.search) {
 </code></pre>
 <p>Only the first <code>[fieldName, fieldText]</code> pair for each field will be populated into the <code>fields</code> object.</p>
 <p><strong>Tip: Constructing a Document Link</strong></p>
-<p>If you haven’t manually added any links to your source documents, you can use the <code>_relative_fp</code> field to construct one, by concatenating it to a base URL for example. Any links added via the <a href="./linking_to_others.html"><code>data-infisearch-link</code></a> attribute are also available under the <code>link</code> field.</p>
-<h3 id="2-linking-and-highlighting-headings-to-other-content-fields"><a class="header" href="#2-linking-and-highlighting-headings-to-other-content-fields">2. Linking and Highlighting Headings to other Content Fields</a></h3>
-<p>To establish the relationship between <em>heading</em> and <em>headingLink</em> pairs to other content fields following them, call <code>getHeadingsAndContents</code>.</p>
+<p>If you haven’t manually added links to your source documents, you can use the <code>_relative_fp</code> field to construct one by concatenating it to a base URL. Any links added via the <a href="./linking_to_others.html"><code>data-infisearch-link</code></a> attribute are also available under the <code>link</code> field.</p>
+<h3 id="2-associating-headings-to-other-content-fields-and-highlighting"><a class="header" href="#2-associating-headings-to-other-content-fields-and-highlighting">2. Associating Headings to other Content Fields and Highlighting</a></h3>
+<p>To establish the relationship between <code>heading</code> and <code>headingLink</code> pairs to other content fields following them, call <code>getHeadingsAndContents</code>.</p>
 <pre><code class="language-ts">// The parameter is a varargs of field names to consider as content fields
 const headingsAndContents: Segment[] = result.linkHeadingsToContents('body');
 </code></pre>
-<p>This returns an array of <code>Segment</code> objects, each of which represents a continuous chunk of heading or content text. It follows this interface:</p>
+<p>This returns an array of <code>Segment</code> objects, each of which represents a continuous chunk of heading or content text:</p>
 <pre><code class="language-ts">interface Segment {
   /**
    * 'content': content text without preceding heading
@@ -4889,17 +4909,17 @@ const headingsAndContents: Segment[] = result.linkHeadingsToContents('body');
 }
 </code></pre>
 <p><strong>Sorting and Choosing Segments</strong></p>
-<p>You would likely want to select and display a <strong>few best segments</strong> only. To rank them, you could for example first priortise segments with a greater <code>numTerms</code> matched, then tie-break by the <code>type</code> of the segment. This is up to your UI!</p>
+<p>This is fully up to your UI. For example, you can first priortise segments with a greater <code>numTerms</code>, then tie-break by the <code>type</code> of the segment. </p>
 <p><strong>Text Highlighting</strong></p>
 <pre><code class="language-ts">interface Segment {
-  ...
+  // ... continuation ...
+
   highlightHTML: (addEllipses: boolean = true) =&gt; string,
   highlight: (addEllipses: boolean = true) =&gt; (string | HTMLElement)[],
 
   text: string,                             // original string
   window: { pos: number, len: number }[],   // Character position and length
 }
-
 </code></pre>
 <p>There are 3 choices for text highlighting:</p>
 <ol>
@@ -4909,7 +4929,7 @@ A single escaped HTML string is then returned for use.</p>
 </li>
 <li>
 <p><code>highlight()</code> does the same but is slightly more efficient, returning a <code>(string | HTMLElement)[]</code> array.
-To use this array safely (strings are unescaped) and conveniently, use the <code>.append(...output)</code> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/append">DOM API</a>.</p>
+To use this array safely (strings are unescaped) and conveniently, use the <code>.append(...seg.highlight())</code> <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/append">DOM API</a>.</p>
 <details>
 <summary style="cursor: default;">Click to see example output</summary>
 <pre><code class="language-ts">[
@@ -4923,7 +4943,7 @@ To use this array safely (strings are unescaped) and conveniently, use the <code
 </details>
 </li>
 <li>
-<p>Lastly, you could perform text highlighting manually using the original <code>text</code> and the closest <code>window</code> of term matches.</p>
+<p>Lastly, you can perform text highlighting manually using the original <code>text</code> and the closest <code>window</code> of term matches.</p>
 </li>
 </ol>
 <script src="/infisearch/infisearch_assets/search-ui.ascii.bundle.js" type="text/javascript" charset="utf-8"></script>
@@ -6302,7 +6322,8 @@ if (window.location.search) {
       {
         fieldName: 'weatherField', // matching our earlier defined field
         displayName: 'Weather',
-        defaultOptName: 'Probably Sunny!'
+        defaultOptName: 'Probably Sunny!',
+        collapsed: true,  // only the first header is initially expanded
       },
       // You can setup more filters as needed following the above procedures
     ]
@@ -6357,8 +6378,8 @@ if (window.location.search) {
         fieldName: 'pageViewsField',
         displayName: 'Number of Views',
         type: 'number', // date, datetime-local is also supported
-        gtePlaceholder: 'Min',
-        ltePlaceholder: 'Max',
+        minLabel: 'Min',
+        maxLabel: 'Max',
       }
     ]
   }
