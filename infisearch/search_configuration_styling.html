@@ -32,6 +32,7 @@
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
@@ -69,10 +70,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -394,8 +397,8 @@
 <p>Head on over to the demo site <a href="https://infi-search.com">here</a> to try them out!</p>
 <h3 id="light"><a class="header" href="#light">Light</a></h3>
 <h4 id="cdn-link"><a class="header" href="#cdn-link">CDN link</a></h4>
-<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.0&quot; as appropriate --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui-light.css&quot; /&gt;
+<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.1&quot; as appropriate --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui-light.css&quot; /&gt;
 </code></pre>
 <h4 id="preview"><a class="header" href="#preview">Preview</a></h4>
 <div class="image-container">
@@ -404,16 +407,16 @@
 </div>
 <h3 id="basic"><a class="header" href="#basic">Basic</a></h3>
 <h4 id="cdn-link-1"><a class="header" href="#cdn-link-1">CDN link</a></h4>
-<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.0&quot; as appropriate --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui-basic.css&quot; /&gt;
+<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.1&quot; as appropriate --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui-basic.css&quot; /&gt;
 </code></pre>
 <div class="image-container">
 <img src="./images/basic-theme-dropdown.png" alt="Preview of basic theme (dropdown)">
 </div>
 <h3 id="dark"><a class="header" href="#dark">Dark</a></h3>
 <h4 id="cdn-link-2"><a class="header" href="#cdn-link-2">CDN link</a></h4>
-<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.0&quot; as appropriate --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui-dark.css&quot; /&gt;
+<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.1&quot; as appropriate --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui-dark.css&quot; /&gt;
 </code></pre>
 <h4 id="preview-1"><a class="header" href="#preview-1">Preview</a></h4>
 <div class="image-container">
@@ -550,5 +553,6 @@ if (window.location.search) {
         <!-- Custom JS scripts -->
 
 
+    </div>
     </body>
 </html>

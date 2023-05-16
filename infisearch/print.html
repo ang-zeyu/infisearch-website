@@ -33,6 +33,7 @@
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
@@ -70,10 +71,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -768,7 +771,7 @@ To preview the defaults, head on over <a href="./search_configuration_styling.ht
 <p>There are a couple of options for installing the indexer:</p>
 <ul>
 <li>Install the global npm package with <code>npm install -g @infisearch/cli</code>.</li>
-<li>If you have the rust / cargo toolchains setup, run <code>cargo install infisearch --vers 0.10.0</code>.</li>
+<li>If you have the rust / cargo toolchains setup, run <code>cargo install infisearch --vers 0.10.1</code>.</li>
 <li>You can also grab the cli binaries <a href="https://github.com/ang-zeyu/infisearch/releases">here</a>.</li>
 </ul>
 <h2 id="running-the-indexer"><a class="header" href="#running-the-indexer">Running the indexer</a></h2>
@@ -783,12 +786,12 @@ To preview the defaults, head on over <a href="./search_configuration_styling.ht
 </ul>
 <h2 id="installing-the-search-ui"><a class="header" href="#installing-the-search-ui">Installing the search UI</a></h2>
 <h3 id="installation-via-cdn"><a class="header" href="#installation-via-cdn">Installation via CDN</a></h3>
-<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.0&quot; as appropriate --&gt;
+<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.1&quot; as appropriate --&gt;
 
 &lt;!--  Search UI script --&gt;
-&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui.ascii.bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui.ascii.bundle.js&quot;&gt;&lt;/script&gt;
 &lt;!-- Search UI css, this provides some basic styling for the search dropdown, and can be omitted if desired --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui-light.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui-light.css&quot; /&gt;
 </code></pre>
 <blockquote>
 <p>⚠️ Ensure the linked versions <strong>match the indexer version</strong> used exactly.</p>
@@ -2350,8 +2353,8 @@ if (window.location.search) {
 <p>Head on over to the demo site <a href="https://infi-search.com">here</a> to try them out!</p>
 <h3 id="light"><a class="header" href="#light">Light</a></h3>
 <h4 id="cdn-link"><a class="header" href="#cdn-link">CDN link</a></h4>
-<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.0&quot; as appropriate --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui-light.css&quot; /&gt;
+<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.1&quot; as appropriate --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui-light.css&quot; /&gt;
 </code></pre>
 <h4 id="preview-1"><a class="header" href="#preview-1">Preview</a></h4>
 <div class="image-container">
@@ -2360,16 +2363,16 @@ if (window.location.search) {
 </div>
 <h3 id="basic"><a class="header" href="#basic">Basic</a></h3>
 <h4 id="cdn-link-1"><a class="header" href="#cdn-link-1">CDN link</a></h4>
-<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.0&quot; as appropriate --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui-basic.css&quot; /&gt;
+<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.1&quot; as appropriate --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui-basic.css&quot; /&gt;
 </code></pre>
 <div class="image-container">
 <img src="./images/basic-theme-dropdown.png" alt="Preview of basic theme (dropdown)">
 </div>
 <h3 id="dark"><a class="header" href="#dark">Dark</a></h3>
 <h4 id="cdn-link-2"><a class="header" href="#cdn-link-2">CDN link</a></h4>
-<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.0&quot; as appropriate --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui-dark.css&quot; /&gt;
+<pre><code class="language-html">&lt;!-- Replace &quot;v0.10.1&quot; as appropriate --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui-dark.css&quot; /&gt;
 </code></pre>
 <h4 id="preview-2"><a class="header" href="#preview-2">Preview</a></h4>
 <div class="image-container">
@@ -4361,7 +4364,7 @@ if (window.location.search) {
 }
 </code></pre>
 <p><strong>CDN Link</strong></p>
-<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui.ascii.bundle.js&quot;&gt;&lt;/script&gt;
+<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui.ascii.bundle.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <h2 id="ascii-tokenizer-with-stemmer"><a class="header" href="#ascii-tokenizer-with-stemmer">Ascii Tokenizer with Stemmer</a></h2>
 <p>This is essentially the same as the ascii tokenizer, but adds a <code>stemmer</code> option.</p>
@@ -4382,7 +4385,7 @@ if (window.location.search) {
 </code></pre>
 <p>If you do not need stemming, use the <code>ascii</code> tokenizer, which has a smaller wasm binary.</p>
 <p><strong>CDN Link</strong></p>
-<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui.ascii-stemmer.bundle.js&quot;&gt;&lt;/script&gt;
+<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui.ascii-stemmer.bundle.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <h2 id="chinese-tokenizer"><a class="header" href="#chinese-tokenizer">Chinese Tokenizer</a></h2>
 <p>This is a lightweight character-wise tokenizer, <strong>not</strong> based on word-based tokenizers like Jieba.</p>
@@ -4397,7 +4400,7 @@ if (window.location.search) {
 }
 </code></pre>
 <p><strong>CDN Link</strong></p>
-<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.0/packages/search-ui/dist/search-ui.chinese.bundle.js&quot;&gt;&lt;/script&gt;
+<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui.chinese.bundle.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <h2 id="stop-words"><a class="header" href="#stop-words">Stop Words</a></h2>
 <p>All tokenizers support keeping (default) or removing stop words using the <code>ignore_stop_words</code> option.</p>
@@ -7570,5 +7573,6 @@ if (window.location.search) {
         });
         </script>
 
+    </div>
     </body>
 </html>
