@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js infi-theme">
+<html lang="en" class="sidebar-visible no-js navy">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -29,14 +29,14 @@
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/infi-theme.css">
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "infi-theme";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,7 +62,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('infi-theme')
+            html.classList.remove('navy')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -70,10 +70,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -81,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="../getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="../csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="../search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="../language.html"><strong aria-hidden="true">4.</strong> Language</a></li><li class="chapter-item expanded "><a href="../indexer_configuration.html"><strong aria-hidden="true">5.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../indexer/fields.html" class="active"><strong aria-hidden="true">5.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="../indexer/files.html"><strong aria-hidden="true">5.2.</strong> Files</a></li><li class="chapter-item expanded "><a href="../indexer/misc.html"><strong aria-hidden="true">5.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="../search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../search_syntax.html"><strong aria-hidden="true">6.1.</strong> Query Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="../larger_collections.html"><strong aria-hidden="true">7.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="../linking_to_others.html"><strong aria-hidden="true">8.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="../filters.html"><strong aria-hidden="true">9.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="../numeric_sorts.html"><strong aria-hidden="true">10.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="../search_configuration_renderers.html"><strong aria-hidden="true">11.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="../incremental_indexing.html"><strong aria-hidden="true">12.</strong> Incremental Indexing</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="../getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="../csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="../search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="../indexer_configuration.html"><strong aria-hidden="true">4.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../indexer/fields.html" class="active"><strong aria-hidden="true">4.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="../indexer/files.html"><strong aria-hidden="true">4.2.</strong> Data</a></li><li class="chapter-item expanded "><a href="../indexer/misc.html"><strong aria-hidden="true">4.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="../language.html"><strong aria-hidden="true">5.</strong> Language</a></li><li class="chapter-item expanded "><a href="../search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li class="chapter-item expanded "><a href="../search_syntax.html"><strong aria-hidden="true">7.</strong> Query Syntax</a></li><li class="chapter-item expanded "><a href="../larger_collections.html"><strong aria-hidden="true">8.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="../linking_to_others.html"><strong aria-hidden="true">9.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="../filters.html"><strong aria-hidden="true">10.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="../numeric_sorts.html"><strong aria-hidden="true">11.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="../search_configuration_renderers.html"><strong aria-hidden="true">12.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="../incremental_indexing.html"><strong aria-hidden="true">13.</strong> Incremental Indexing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -409,18 +411,18 @@
 <h2 id="adding-fields"><a class="header" href="#adding-fields">Adding Fields</a></h2>
 <p>You can add your own fields to index for free-text search, create categorical and/or numeric facet filters, and custom numeric sort orders.</p>
 <p>The user interface only incorporates the default set of fields in result highlighting however. If you need to incorporate additional fields, for example to display a icon beside each result, you can <a href="../search_configuration_renderers.html#rendering-search-results">alter</a> the HTML outputs, or use the <a href="../search_api.html">search API</a>.</p>
-<details>
-<summary>If don't need any of InfiSearch's default fields</summary>
-<p>You can also assign a value of <code>null</code> to remove it completely as a minor optimization.</p>
+<h4 id="removing-default-fields"><a class="header" href="#removing-default-fields">Removing Default Fields</a></h4>
+<p>If you are using InfiSearch as a general-purpose client side search tool, you can assign a value of <code>null</code> to remove default field definitions completely as a minor optimization.
+Alternatively, <code>merge_default_fields: false</code> removes all default field definitions.</p>
 <pre><code class="language-json">{
   &quot;fields_config&quot;: {
     &quot;fields&quot;: {
       &quot;h1&quot;: null
-    }
+    },
+    &quot;merge_default_fields&quot;: false
   }
 }
 </code></pre>
-</details>
 <h4 id="reserved-fields"><a class="header" href="#reserved-fields">Reserved Fields</a></h4>
 <p>Reserved fields are prefixed with an underscore <code>_</code>, and are hardcoded into the indexer to perform special functions.</p>
 <ul>
@@ -428,7 +430,7 @@
 <p><strong>_relative_fp</strong>: the relative path from your source folder to the file.</p>
 </li>
 <li>
-<p><strong>_add_files</strong>: This field allows you to <strong>index/combine multiple files</strong> as <strong>a single document</strong>, which can be useful for overriding or extending data.
+<p><strong>_add_files</strong>: This field allows you to <strong>index multiple files</strong> as <strong>a single document</strong>, which can be useful for overriding or extending data.
 See this <a href="./misc.html#indexing-multiple-files-under-one-document">section</a> under indexing for more details.</p>
 </li>
 </ul>
@@ -445,8 +447,8 @@ See this <a href="./misc.html#indexing-multiple-files-under-one-document">sectio
 <p>This parameter is a boost / penalty multiplied to a individual field’s score.</p>
 <p>Specifying <code>0.0</code> will also result in the field not being indexed into InfiSearch’s inverted index at all meaning that searching for any terms in this field will not show up any results. When used in combination with the <code>storage</code> parameter, the use case is to create a field that is only stored for custom sort orders, facet filters, or UI purposes (e.g. the <code>_relative_fp</code> field).</p>
 <p><code>k=1.2</code> &amp; <code>b=0.75</code></p>
-<p>These are Okapi BM25 model parameters that control the impact of term frequency and document lengths. The following <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/pluggable-similarites.html#bm25-tunability">article</a> provides a good overview on how to configure these, if needed.</p>
-<p>All fields except titles (<code>b=0.15</code>) and headings (<code>b=0.25</code>) use the above stated default parameters.</p>
+<p>These are scoring parameters that control the impact of term frequency and document lengths. The following <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/pluggable-similarites.html#bm25-tunability">article</a> provides a good overview on how to configure these, if needed.</p>
+<p>All default fields except titles and headings use the above default parameters.</p>
 <h2 id="field-storage"><a class="header" href="#field-storage">Field Storage</a></h2>
 <pre><code class="language-json">{
   &quot;fields_config&quot;: {
@@ -634,8 +636,8 @@ if (window.location.search) {
         <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../src/infi-theme.js"></script>
 
 
+    </div>
     </body>
 </html>

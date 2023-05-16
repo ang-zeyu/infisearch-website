@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js infi-theme">
+<html lang="en" class="sidebar-visible no-js navy">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -29,14 +29,14 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="src/infi-theme.css">
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "infi-theme";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,7 +62,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('infi-theme')
+            html.classList.remove('navy')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -70,10 +70,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -81,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html" class="active"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="language.html"><strong aria-hidden="true">4.</strong> Language</a></li><li class="chapter-item expanded "><a href="indexer_configuration.html"><strong aria-hidden="true">5.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="indexer/fields.html"><strong aria-hidden="true">5.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="indexer/files.html"><strong aria-hidden="true">5.2.</strong> Files</a></li><li class="chapter-item expanded "><a href="indexer/misc.html"><strong aria-hidden="true">5.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_syntax.html"><strong aria-hidden="true">6.1.</strong> Query Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="larger_collections.html"><strong aria-hidden="true">7.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="linking_to_others.html"><strong aria-hidden="true">8.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="filters.html"><strong aria-hidden="true">9.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="numeric_sorts.html"><strong aria-hidden="true">10.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="search_configuration_renderers.html"><strong aria-hidden="true">11.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="incremental_indexing.html"><strong aria-hidden="true">12.</strong> Incremental Indexing</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html" class="active"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="indexer_configuration.html"><strong aria-hidden="true">4.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="indexer/fields.html"><strong aria-hidden="true">4.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="indexer/files.html"><strong aria-hidden="true">4.2.</strong> Data</a></li><li class="chapter-item expanded "><a href="indexer/misc.html"><strong aria-hidden="true">4.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="language.html"><strong aria-hidden="true">5.</strong> Language</a></li><li class="chapter-item expanded "><a href="search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li class="chapter-item expanded "><a href="search_syntax.html"><strong aria-hidden="true">7.</strong> Query Syntax</a></li><li class="chapter-item expanded "><a href="larger_collections.html"><strong aria-hidden="true">8.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="linking_to_others.html"><strong aria-hidden="true">9.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="filters.html"><strong aria-hidden="true">10.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="numeric_sorts.html"><strong aria-hidden="true">11.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="search_configuration_renderers.html"><strong aria-hidden="true">12.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="incremental_indexing.html"><strong aria-hidden="true">13.</strong> Incremental Indexing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -375,6 +377,12 @@
 <p><span style="font-weight: 600;"><!--preload weight 600--></span></p>
 <div id="infisearch-mdbook-target"></div>
 <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<script>
+if (localStorage.getItem('mdbook-theme') === 'infi-theme' || localStorage.getItem('mdbook-theme') === 'morsels-theme') {
+   localStorage.removeItem('mdbook-theme');
+   location.reload();
+}
+</script>
 <p>InfiSearch is a <em>client-side</em> search solution made for static sites, including a search UI and library depending on a <em>pre-built index</em> generated by a CLI tool.</p>
 <h2 id="features"><a class="header" href="#features">Features</a></h2>
 <ul>
@@ -396,17 +404,17 @@
 </ul>
 <h3 id="search-features"><a class="header" href="#search-features">Search Features</a></h3>
 <p>A little more about some of InfiSearch’s search features.</p>
-<h4 id="ranking-model"><a class="header" href="#ranking-model">Ranking Model</a></h4>
-<p>Query expressions are ranked using the BM25 model. A soft disjunctive maximum of a document’s field’s scores is then calculated. By default, titles, <code>&lt;h1&gt;</code> headings, other headings, and the rest of the text are indexed into 4 separate fields.</p>
-<p><strong>Query term proximity ranking</strong> is InfiSearch’s highlight here, and is enabled by default. Results are scaled according to how close search expressions are to one another, greatly improving search relevance.</p>
-<h4 id="built-in-compression"><a class="header" href="#built-in-compression">Built-In Compression</a></h4>
+<h4 id="blazing-fast"><a class="header" href="#blazing-fast">Blazing Fast</a></h4>
+<p>Powered by WebAssembly and Webworkers, InfiSearch blazes through searches on tens of thousands of documents.
+Index downloads are persistently cached using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Cache">Cache</a> API that backs service workers, but comes without its setup hassle. Users will never download the same data twice.</p>
 <p>Some efficient, high-return compression schemes are also employed, so you get all these features without much penalty.
-To facilitate decompression efficiency of such a low-level format, most of the search library is also powered by WebAssembly (Rust).</p>
-<p>This documentation for example, which has all features enabled, generates a main index file of just 19KB, and a dictionary of 9KB.</p>
-<h4 id="webworker-built-in"><a class="header" href="#webworker-built-in">WebWorker Built-in</a></h4>
-<p>Most of the search library also operates on a WebWorker, so you can deliver the best UX without blocking the UI thread, especially for large collections.</p>
-<h4 id="persistent-caching"><a class="header" href="#persistent-caching">Persistent Caching</a></h4>
-<p>Persistent caching is achieved through use of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Cache">Cache</a> API, which backs service workers and has excellent support in modern browsers.</p>
+This documentation for example, which has all features enabled, generates a main index file of just 20KB, and a dictionary of 9KB.</p>
+<h4 id="scalable"><a class="header" href="#scalable">Scalable</a></h4>
+<p>A monolithic index is built by default to reduce network latency, which suffices for 90% of use cases. But, you also have the option of splitting up the index so users retrieve only what’s necessary, greatly improving client-side search scalability.</p>
+<h4 id="ranking-model--query-refinement"><a class="header" href="#ranking-model--query-refinement">Ranking Model &amp; Query Refinement</a></h4>
+<p>InfiSearch adopts industry standard scoring schemes. Queries are first ranked using the BM25 model, then a soft disjunctive maximum of the document’s field scores is taken. By default, <code>&lt;title&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;h2-6&gt;</code>, then other texts are indexed as four separate fields.</p>
+<p>Query term proximity ranking is InfiSearch’s highlight here, and is enabled by default. Results are scaled according to how close search expressions are to one another, greatly improving contextuality of searches.</p>
+<p>InfiSearch also gives the searchers the a powerful boolean query syntax, made known to them through an advanced search tips icon. You also have the option of setting up custom facet filters such as multi-select checkboxes, numeric filters, and date time filters for ease of use.</p>
 <h2 id="how-it-works"><a class="header" href="#how-it-works">How it Works:</a></h2>
 <p>InfiSearch depends on a static, pre-built index that is a collection of various files.</p>
 <ol>
@@ -419,10 +427,10 @@ To facilitate decompression efficiency of such a low-level format, most of the s
 </li>
 <li>The search UI:
 <ol>
-<li>Figures out which index files are needed from the user query</li>
-<li>Retrieves the index files from cache/memory/network requests</li>
+<li>Figures out which index files are needed from the query</li>
+<li>Retrieves the files from cache/memory/network requests</li>
 <li>Obtains and ranks the result set</li>
-<li>Finally, retrieves the field stores from cache/memory/network requests progressively to generate result previews</li>
+<li>Lastly, retrieves field stores from cache/memory/network requests progressively to generate result previews</li>
 </ol>
 </li>
 </ol>
@@ -529,8 +537,8 @@ if (window.location.search) {
         <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="src/infi-theme.js"></script>
 
 
+    </div>
     </body>
 </html>

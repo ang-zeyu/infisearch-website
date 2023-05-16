@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js infi-theme">
+<html lang="en" class="sidebar-visible no-js navy">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Files - InfiSearch Documentation</title>
+        <title>Data - InfiSearch Documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -29,14 +29,14 @@
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/infi-theme.css">
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "infi-theme";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,7 +62,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('infi-theme')
+            html.classList.remove('navy')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -70,10 +70,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -81,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="../getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="../csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="../search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="../language.html"><strong aria-hidden="true">4.</strong> Language</a></li><li class="chapter-item expanded "><a href="../indexer_configuration.html"><strong aria-hidden="true">5.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../indexer/fields.html"><strong aria-hidden="true">5.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="../indexer/files.html" class="active"><strong aria-hidden="true">5.2.</strong> Files</a></li><li class="chapter-item expanded "><a href="../indexer/misc.html"><strong aria-hidden="true">5.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="../search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../search_syntax.html"><strong aria-hidden="true">6.1.</strong> Query Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="../larger_collections.html"><strong aria-hidden="true">7.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="../linking_to_others.html"><strong aria-hidden="true">8.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="../filters.html"><strong aria-hidden="true">9.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="../numeric_sorts.html"><strong aria-hidden="true">10.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="../search_configuration_renderers.html"><strong aria-hidden="true">11.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="../incremental_indexing.html"><strong aria-hidden="true">12.</strong> Incremental Indexing</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="../getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="../csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="../search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="../indexer_configuration.html"><strong aria-hidden="true">4.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../indexer/fields.html"><strong aria-hidden="true">4.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="../indexer/files.html" class="active"><strong aria-hidden="true">4.2.</strong> Data</a></li><li class="chapter-item expanded "><a href="../indexer/misc.html"><strong aria-hidden="true">4.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="../language.html"><strong aria-hidden="true">5.</strong> Language</a></li><li class="chapter-item expanded "><a href="../search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li class="chapter-item expanded "><a href="../search_syntax.html"><strong aria-hidden="true">7.</strong> Query Syntax</a></li><li class="chapter-item expanded "><a href="../larger_collections.html"><strong aria-hidden="true">8.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="../linking_to_others.html"><strong aria-hidden="true">9.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="../filters.html"><strong aria-hidden="true">10.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="../numeric_sorts.html"><strong aria-hidden="true">11.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="../search_configuration_renderers.html"><strong aria-hidden="true">12.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="../incremental_indexing.html"><strong aria-hidden="true">13.</strong> Incremental Indexing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -374,9 +376,9 @@
 /></p>
 <p><span style="font-weight: 600;"><!--preload weight 600--></span></p>
 <div id="infisearch-mdbook-target"></div>
-<h1 id="indexer-file-configuration"><a class="header" href="#indexer-file-configuration">Indexer File Configuration</a></h1>
-<p>The configurations in this section mainly specify <strong>how</strong> (mapping file contents to fields) and <strong>which</strong> files to index.</p>
-<p>InfiSearch’s defaults should be sufficient to index most HTML files, but if not, you can also configure how the content mapping is done. Enabling support for other file formats (e.g. JSON, CSV, PDF) files is also done here.</p>
+<h1 id="indexer-data-configuration"><a class="header" href="#indexer-data-configuration">Indexer Data Configuration</a></h1>
+<p>The configurations in this page specify <strong>how</strong> (mapping file data to fields) and <strong>which</strong> files to index.</p>
+<p>InfiSearch’s defaults are sufficient to index most HTML files, but if not, you can also configure how the content mapping is done. Enabling support for other file formats (e.g. JSON, CSV, PDF) files is also done here.</p>
 <h2 id="mapping-file-data-to-fields"><a class="header" href="#mapping-file-data-to-fields">Mapping File Data to Fields</a></h2>
 <pre><code class="language-json">{
   &quot;indexing_config&quot;: {
@@ -417,6 +419,12 @@
         &quot;field_name&quot;: &quot;body&quot;
       },
 
+      &quot;meta[name=\&quot;description\&quot;],meta[name=\&quot;keywords\&quot;]&quot;: {
+        &quot;attr_map&quot;: {
+          &quot;content&quot;: &quot;body&quot;
+        }
+      },
+
       // A convenient means to override the link used in the result preview
       // See &quot;Linking to other pages&quot; for more information
       &quot;span[data-infisearch-link]&quot;: {
@@ -424,7 +432,8 @@
           &quot;data-infisearch-link&quot;: &quot;link&quot;
         }
       }
-    }
+    },
+    &quot;merge_default_selectors&quot;: true
   }
 }
 </code></pre>
@@ -450,7 +459,7 @@
 </ol>
 <p>To <strong>exclude elements</strong> from indexing, use the <code>exclude_selectors</code> option, or add the in-built <code>data-infisearch-ignore</code> attribute to your HTML.</p>
 <p>If needed, you can also index <strong>HTML fragments</strong> that are incomplete documents (for example, documents which are missing the <code>&lt;head&gt;</code>). To match the entire fragment, use the <code>body</code> selector.</p>
-<p>Lastly, if you need to remove a default selector, simply replace its definition with <code>null</code>. For example, <code>&quot;h2,h3,h4,h5,h6&quot;: null</code>.</p>
+<p>Lastly, if you need to remove a default selector, simply replace its definition with <code>null</code>. For example, <code>&quot;h2,h3,h4,h5,h6&quot;: null</code>. Alternatively, specifying <code>&quot;merge_default_selectors&quot;: false</code> will remove all default selectors.</p>
 <h4 id="json-files-loadersjsonloader"><a class="header" href="#json-files-loadersjsonloader">JSON Files: <strong><code>loaders.JsonLoader</code></strong></a></h4>
 <pre><code class="language-json">&quot;loaders&quot;: {
   &quot;JsonLoader&quot;: {
@@ -459,7 +468,7 @@
       &quot;book_link&quot;: &quot;link&quot;,
       &quot;chapter_title&quot;: &quot;title&quot;
     },
-    // Order in which to index the keys of the json {} document
+    // Optional, order in which to index the keys of the json {} document
     &quot;field_order&quot;: [
       &quot;book_link&quot;,
       &quot;chapter_title&quot;,
@@ -468,21 +477,20 @@
   }
 }
 </code></pre>
-<p>JSON files can also be indexed. The <code>field_map</code> must be specified, which contains a mapping of <strong>JSON data key -&gt; field name</strong>.
-The <code>field_order</code> array controls the order in which these fields are indexed, which has a minor influence on <a href="../introduction.html#ranking-model">query term proximity ranking</a>.</p>
+<p>JSON files can also be indexed. The <code>field_map</code> contains a mapping of your <strong>JSON data key -&gt; field name</strong>.
+The <code>field_order</code> array controls the order in which the data keys are indexed, which has a minor influence on <a href="../introduction.html#ranking-model">query term proximity ranking</a>.</p>
 <p>The JSON file can be either:</p>
 <ol>
-<li>An object, following the schema set out in <code>field_map</code></li>
-<li>An array of objects following the schema set out in <code>field_map</code></li>
+<li>An object, with numbers, strings or <code>null</code> values</li>
+<li>An array of such objects</li>
 </ol>
 <h4 id="csv-files-loaderscsvloader"><a class="header" href="#csv-files-loaderscsvloader">CSV Files: <strong><code>loaders.CsvLoader</code></strong></a></h4>
 <pre><code class="language-json">&quot;loaders&quot;: {
   &quot;CsvLoader&quot;: {
     // ---------------------
     // Map data using CSV headers
-    &quot;use_headers&quot;: false,
     &quot;header_field_map&quot;: {},
-    &quot;header_field_order&quot;: [],
+    &quot;header_field_order&quot;: [],            // Optional, order to index the columns
     // ---------------------
     // Or with header indices
     &quot;index_field_map&quot;: {
@@ -491,7 +499,7 @@ The <code>field_order</code> array controls the order in which these fields are 
       &quot;2&quot;: &quot;body&quot;,
       &quot;4&quot;: &quot;heading&quot;
     },
-    &quot;index_field_order&quot;: [1, 4, 2, 0],
+    &quot;index_field_order&quot;: [1, 4, 2, 0],   // Optional, order to index the columns
     // ---------------------
     // Options for csv parsing, from the Rust &quot;csv&quot; crate
     &quot;parse_options&quot;: {
@@ -505,8 +513,8 @@ The <code>field_order</code> array controls the order in which these fields are 
   }
 }
 </code></pre>
-<p>Field mappings for CSV files can be configured using one of the <code>field_map / field_order</code> key pairs. The <code>use_headers</code> parameter specifies which of the two pairs of settings to use.</p>
-<p>The <code>parse_options</code> key specifies options for parsing the csv file. In particular, note that the <code>has_headers</code> key is distinct from and does not influence the <code>use_headers</code> parameter.</p>
+<p>Field mappings for CSV files can be configured using one of the <code>field_map</code> keys. The <code>field_order</code> arrays controls the order columns are indexed.</p>
+<p>The <code>parse_options</code> key specifies options for parsing the csv file.</p>
 <h4 id="pdf-files-loaderspdfloader"><a class="header" href="#pdf-files-loaderspdfloader">PDF Files: <strong><code>loaders.PdfLoader</code></strong></a></h4>
 <pre><code class="language-json">&quot;loaders&quot;: {
   &quot;PdfLoader&quot;: {
@@ -652,8 +660,8 @@ if (window.location.search) {
         <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../src/infi-theme.js"></script>
 
 
+    </div>
     </body>
 </html>

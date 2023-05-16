@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js infi-theme">
+<html lang="en" class="sidebar-visible no-js navy">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -29,14 +29,14 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="src/infi-theme.css">
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "infi-theme";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,7 +62,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('infi-theme')
+            html.classList.remove('navy')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -70,10 +70,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -81,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="language.html" class="active"><strong aria-hidden="true">4.</strong> Language</a></li><li class="chapter-item expanded "><a href="indexer_configuration.html"><strong aria-hidden="true">5.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="indexer/fields.html"><strong aria-hidden="true">5.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="indexer/files.html"><strong aria-hidden="true">5.2.</strong> Files</a></li><li class="chapter-item expanded "><a href="indexer/misc.html"><strong aria-hidden="true">5.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_syntax.html"><strong aria-hidden="true">6.1.</strong> Query Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="larger_collections.html"><strong aria-hidden="true">7.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="linking_to_others.html"><strong aria-hidden="true">8.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="filters.html"><strong aria-hidden="true">9.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="numeric_sorts.html"><strong aria-hidden="true">10.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="search_configuration_renderers.html"><strong aria-hidden="true">11.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="incremental_indexing.html"><strong aria-hidden="true">12.</strong> Incremental Indexing</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="indexer_configuration.html"><strong aria-hidden="true">4.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="indexer/fields.html"><strong aria-hidden="true">4.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="indexer/files.html"><strong aria-hidden="true">4.2.</strong> Data</a></li><li class="chapter-item expanded "><a href="indexer/misc.html"><strong aria-hidden="true">4.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="language.html" class="active"><strong aria-hidden="true">5.</strong> Language</a></li><li class="chapter-item expanded "><a href="search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li class="chapter-item expanded "><a href="search_syntax.html"><strong aria-hidden="true">7.</strong> Query Syntax</a></li><li class="chapter-item expanded "><a href="larger_collections.html"><strong aria-hidden="true">8.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="linking_to_others.html"><strong aria-hidden="true">9.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="filters.html"><strong aria-hidden="true">10.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="numeric_sorts.html"><strong aria-hidden="true">11.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="search_configuration_renderers.html"><strong aria-hidden="true">12.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="incremental_indexing.html"><strong aria-hidden="true">13.</strong> Incremental Indexing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -376,10 +378,15 @@
 <div id="infisearch-mdbook-target"></div>
 <h1 id="language-configuration"><a class="header" href="#language-configuration">Language Configuration</a></h1>
 <p>There are 3 language modules available. To configure these, you will need to serve the appropriate <a href="./getting_started.html#hosting-the-files">language bundle</a> in your HTML (or edit the CDN link accordingly), and edit the indexer configuration file.</p>
+<pre><code class="language-json">{
+  &quot;lang_config&quot;: {
+    // ... options go here ...
+  }
+}
+</code></pre>
 <h2 id="ascii-tokenizer"><a class="header" href="#ascii-tokenizer">Ascii Tokenizer</a></h2>
-<h4 id="cdn-link"><a class="header" href="#cdn-link">CDN link</a></h4>
-<p>The default tokenizer splits on sentences, then whitespaces to obtain tokens.</p>
-<p>An <a href="https://github.com/tantivy-search/tantivy/blob/main/src/tokenizer/ascii_folding_filter.rs">asciiFoldingFilter</a> is then applied to these tokens, followed by punctuation and non-word-character boundary removal.</p>
+<p>The default tokenizer should work for any language that relies on ASCII characters, or their inflections (e.g. “á”).</p>
+<p>The text is first split into on sentences, then whitespaces to obtain tokens. An <a href="https://github.com/tantivy-search/tantivy/blob/main/src/tokenizer/ascii_folding_filter.rs">asciiFoldingFilter</a> is then applied to normalize diacritics, followed by punctuation and non-word-character boundary removal.</p>
 <pre><code class="language-json">{
   &quot;lang&quot;: &quot;ascii&quot;,
   &quot;options&quot;: {
@@ -397,12 +404,12 @@
 }
 </code></pre>
 <p><strong>CDN Link</strong></p>
-<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.9.1/packages/search-ui/dist/search-ui.ascii.bundle.js&quot;&gt;&lt;/script&gt;
+<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui.ascii.bundle.js&quot;&gt;&lt;/script&gt;
 </code></pre>
-<h2 id="latin-tokenizer"><a class="header" href="#latin-tokenizer">Latin Tokenizer</a></h2>
+<h2 id="ascii-tokenizer-with-stemmer"><a class="header" href="#ascii-tokenizer-with-stemmer">Ascii Tokenizer with Stemmer</a></h2>
 <p>This is essentially the same as the ascii tokenizer, but adds a <code>stemmer</code> option.</p>
 <pre><code class="language-json">{
-  &quot;lang&quot;: &quot;latin&quot;,
+  &quot;lang&quot;: &quot;ascii_stemmer&quot;,
   &quot;options&quot;: {
     // ----------------------------------
     // Ascii Tokenizer options also apply
@@ -418,7 +425,7 @@
 </code></pre>
 <p>If you do not need stemming, use the <code>ascii</code> tokenizer, which has a smaller wasm binary.</p>
 <p><strong>CDN Link</strong></p>
-<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.9.1/packages/search-ui/dist/search-ui.latin.bundle.js&quot;&gt;&lt;/script&gt;
+<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui.ascii-stemmer.bundle.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <h2 id="chinese-tokenizer"><a class="header" href="#chinese-tokenizer">Chinese Tokenizer</a></h2>
 <p>This is a lightweight character-wise tokenizer, <strong>not</strong> based on word-based tokenizers like Jieba.</p>
@@ -433,7 +440,7 @@
 }
 </code></pre>
 <p><strong>CDN Link</strong></p>
-<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.9.1/packages/search-ui/dist/search-ui.chinese.bundle.js&quot;&gt;&lt;/script&gt;
+<pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ang-zeyu/infisearch@v0.10.1/packages/search-ui/dist/search-ui.chinese.bundle.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <h2 id="stop-words"><a class="header" href="#stop-words">Stop Words</a></h2>
 <p>All tokenizers support keeping (default) or removing stop words using the <code>ignore_stop_words</code> option.</p>
@@ -463,6 +470,7 @@ Refer to this <a href="https://github.com/ang-zeyu/infisearch/tree/main/packages
 <tr><td><code>startSearching</code></td><td><code>'Start Searching Above!'</code></td><td>Text shown when the input is empty.</td></tr>
 <tr><td><code>startingUp</code></td><td><code>'... Starting Up ...'</code></td><td>Text shown when InfiSearch is still not ready to perform any queries. The setup occurs extremely quickly, you will hopefully not be able to see this text most of the time.</td></tr>
 <tr><td><code>navigation</code></td><td><code>'Navigation'</code></td><td>Navigation controls text.</td></tr>
+<tr><td><code>sortBy</code></td><td><code>'Sort by'</code></td><td>Header text for custom <a href="./search_configuration.html#setting-up-numeric-filters-and-sort-orders">sort orders</a>.</td></tr>
 <tr><td><code>tipHeader</code></td><td><code>'🔎 Advanced search tips'</code></td><td>Header of the tip popup.</td></tr>
 <tr><td><code>tip</code></td><td><code>'Tip'</code></td><td>First column header of the tip popup.</td></tr>
 <tr><td><code>example</code></td><td><code>'Example'</code></td><td>Second column header of the tip popup.</td></tr>
@@ -541,11 +549,11 @@ if (window.location.search) {
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="search_configuration_styling.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="indexer/misc.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="indexer_configuration.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="search_api.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -555,11 +563,11 @@ if (window.location.search) {
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="search_configuration_styling.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="indexer/misc.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="indexer_configuration.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="search_api.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -580,8 +588,8 @@ if (window.location.search) {
         <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="src/infi-theme.js"></script>
 
 
+    </div>
     </body>
 </html>

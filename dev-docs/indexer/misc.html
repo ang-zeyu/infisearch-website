@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js infi-theme">
+<html lang="en" class="sidebar-visible no-js navy">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -29,14 +29,14 @@
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../src/infi-theme.css">
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "infi-theme";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,7 +62,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('infi-theme')
+            html.classList.remove('navy')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -70,10 +70,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -81,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="../getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="../csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="../search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="../language.html"><strong aria-hidden="true">4.</strong> Language</a></li><li class="chapter-item expanded "><a href="../indexer_configuration.html"><strong aria-hidden="true">5.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../indexer/fields.html"><strong aria-hidden="true">5.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="../indexer/files.html"><strong aria-hidden="true">5.2.</strong> Files</a></li><li class="chapter-item expanded "><a href="../indexer/misc.html" class="active"><strong aria-hidden="true">5.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="../search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../search_syntax.html"><strong aria-hidden="true">6.1.</strong> Query Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="../larger_collections.html"><strong aria-hidden="true">7.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="../linking_to_others.html"><strong aria-hidden="true">8.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="../filters.html"><strong aria-hidden="true">9.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="../numeric_sorts.html"><strong aria-hidden="true">10.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="../search_configuration_renderers.html"><strong aria-hidden="true">11.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="../incremental_indexing.html"><strong aria-hidden="true">12.</strong> Incremental Indexing</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="../getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="../csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="../search_configuration.html"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="../indexer_configuration.html"><strong aria-hidden="true">4.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../indexer/fields.html"><strong aria-hidden="true">4.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="../indexer/files.html"><strong aria-hidden="true">4.2.</strong> Data</a></li><li class="chapter-item expanded "><a href="../indexer/misc.html" class="active"><strong aria-hidden="true">4.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="../language.html"><strong aria-hidden="true">5.</strong> Language</a></li><li class="chapter-item expanded "><a href="../search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li class="chapter-item expanded "><a href="../search_syntax.html"><strong aria-hidden="true">7.</strong> Query Syntax</a></li><li class="chapter-item expanded "><a href="../larger_collections.html"><strong aria-hidden="true">8.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="../linking_to_others.html"><strong aria-hidden="true">9.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="../filters.html"><strong aria-hidden="true">10.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="../numeric_sorts.html"><strong aria-hidden="true">11.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="../search_configuration_renderers.html"><strong aria-hidden="true">12.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="../incremental_indexing.html"><strong aria-hidden="true">13.</strong> Incremental Indexing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -376,54 +378,49 @@
 <div id="infisearch-mdbook-target"></div>
 <h1 id="indexer-misc-configuration"><a class="header" href="#indexer-misc-configuration">Indexer Misc Configuration</a></h1>
 <h2 id="indexing-positions"><a class="header" href="#indexing-positions">Indexing Positions</a></h2>
-<p><strong><code>with_positions = true</code></strong></p>
-<p>This option controls whether positions will be stored.</p>
-<p>Features such as phrase queries that require positional information will not work if this is disabled.</p>
-<p>Turning this off for very large collections (~&gt; 1GB) can increase the tool’s scalability, at the cost of such features.</p>
-<h2 id="indexer-performance"><a class="header" href="#indexer-performance">Indexer Performance</a></h2>
 <pre><code class="language-json">{
   &quot;indexing_config&quot;: {
-    &quot;num_threads&quot;: &lt;number of physical cpus&gt; - 1
+    &quot;with_positions&quot;: true
   }
 }
 </code></pre>
-<p>This is the number of threads to use, excluding the main thread. When unspecified, this is <code>max(min(num physical cores, num logical cores) - 1, 1)</code>.</p>
+<p>This option controls if positions are stored.
+Features such as phrase queries that require positional information will not work if this is disabled.
+Turning this off for very large collections (~&gt; 1GB) can increase the tool’s scalability, at the cost of such features.</p>
+<h2 id="indexer-thread-count"><a class="header" href="#indexer-thread-count">Indexer Thread Count</a></h2>
+<pre><code class="language-json">{
+  &quot;indexing_config&quot;: {
+    &quot;num_threads&quot;: max(min(physical cores, logical cores) - 1, 1)
+  }
+}
+</code></pre>
 <h2 id="indexing-multiple-files-under-one-document"><a class="header" href="#indexing-multiple-files-under-one-document">Indexing Multiple Files Under One Document</a></h2>
 <p>InfiSearch regards each file as a single document by default. You can index <strong>multiple files</strong> into <strong>one document</strong> using the reserved field <a href="./fields.html#reserved-fields"><code>_add_files</code></a>. This is useful if you need to override or add data but can’t modify the source document easily.</p>
-<h4 id="example-overriding-a-documents-title"><a class="header" href="#example-overriding-a-documents-title">Example: Overriding a Document’s Title</a></h4>
+<p>Overrides should be provided with JSON, CSV, or HTML files, as TXT and PDF files have no reliable way of supplying the <code>_add_files</code> field. In addition, you will need to manually map the CSV data to the <code>_add_files</code> field. This is automatically done for JSON and <a href="../linking_to_others.html">HTML</a> files.</p>
+<h4 id="example-overriding-a-documents-link-with-another-file"><a class="header" href="#example-overriding-a-documents-link-with-another-file">Example: Overriding a Document’s Link With Another File</a></h4>
 <p>Suppose you have the following files:</p>
 <pre><code>folder
 |-- main.html
 |-- overrides.json
 </code></pre>
-<p>To index <code>main.html</code> and override its title, you would have:</p>
-<p>1) Inside <code>overrides.json</code>,</p>
+<p>To index <code>main.html</code> and override its link, you would have:</p>
+<p><code>overrides.json</code></p>
 <pre><code class="language-json">{
-  &quot;title&quot;: &quot;Title Override&quot;,
+  &quot;link&quot;: &quot;https://infi-search.com&quot;,
   &quot;_add_files&quot;: &quot;./main.html&quot;
 }
 </code></pre>
-<p>2) Inside your indexer configuration file:</p>
+<p>Indexer Configuration</p>
 <pre><code class="language-json">{
   &quot;indexing_config&quot;: {
     &quot;exclude&quot;: [&quot;main.html&quot;]
   }
 }
 </code></pre>
-<p>This excludes indexing <code>main.html</code> directly, but does so through <code>overrides.json</code>. As the user interface uses the first title it sees, the title is overwritten.</p>
-<h4 id="example-overriding-a-documents-link"><a class="header" href="#example-overriding-a-documents-link">Example: Overriding a Document’s Link</a></h4>
-<p>Another example use case might be to redirect to another domain using the <a href="./fields.html#default-field-configuration"><code>link</code> field</a>:</p>
-<pre><code class="language-json">{
-  &quot;link&quot;: &quot;https://infi-search.com&quot;,
-  &quot;_add_files&quot;: &quot;./main.html&quot;
-}
-</code></pre>
-<blockquote>
-<p>Overrides should be provided with JSON, CSV, or HTML files, as TXT and PDF files have no reliable way of supplying the <code>_add_files</code> field. In addition, you will need to manually map the CSV data to the <code>_add_files</code> field. This is automatically done for JSON and <a href="../linking_to_others.html">HTML</a> files.</p>
-</blockquote>
+<p>This excludes indexing <code>main.html</code> directly, but does so through <code>overrides.json</code>.</p>
 <h2 id="larger-collections"><a class="header" href="#larger-collections">Larger Collections</a></h2>
 <blockquote>
-<p>⚠️ This section is mostly for reference, use the preconfigured <a href="../larger_collections.html">scaling presets</a> if possible.</p>
+<p>⚠️ This section serves as a reference, prefer the preconfigured <a href="../larger_collections.html">scaling presets</a> if possible.</p>
 </blockquote>
 <p><strong>Field Configuration</strong></p>
 <pre><code class="language-json">{
@@ -439,18 +436,16 @@
 }
 </code></pre>
 <h4 id="field-store-caching-cache_all_field_stores"><a class="header" href="#field-store-caching-cache_all_field_stores">Field Store Caching: <strong><code>cache_all_field_stores</code></strong></a></h4>
-<p>This is the same option as the one under <a href="../search_configuration.html#search-functionality-options">search functionality options</a>.
-If both are specified, the value specified in the <code>infisearch.init</code> takes priority.</p>
-<p>All fields specified with <code>storage=[{ &quot;type&quot;: &quot;text&quot; }]</code> are cached up front on initialisation when this is enabled.</p>
+<p>All fields specified with <code>storage=[{ &quot;type&quot;: &quot;text&quot; }]</code> are cached up front when this is enabled.
+This is the same option as the one under <a href="../search_configuration.html#search-functionality-options">search functionality options</a>, and has lower priority.</p>
 <h4 id="field-store-granularity-num_docs_per_store"><a class="header" href="#field-store-granularity-num_docs_per_store">Field Store Granularity: <code>num_docs_per_store</code></a></h4>
-<p>The <code>num_docs_per_store</code> parameter controls how many documents to store in one JSON file. Batching multiple files together if the fields stored are small can lead to less files and better browser caching.</p>
+<p>The <code>num_docs_per_store</code> parameter controls how many documents’ texts to store in one JSON file. Batching multiple files together increases file size but can lead to less files and better browser caching.</p>
 <h4 id="index-shard-size-pl_limit"><a class="header" href="#index-shard-size-pl_limit">Index Shard Size: <strong><code>pl_limit</code></strong></a></h4>
-<p>This is the main threshold parameter (in bytes) at which to “cut” index (<strong>pl</strong> meaning <a href="https://en.wikipedia.org/wiki/Inverted_index">postings list</a>) files.</p>
-<p>Increasing this value produces less but bigger files (which may take longer to retrieve), and vice versa.</p>
-<p>Increasing the value may also be useful for caching when used in conjunction with <code>pl_cache_threshold</code> below, since fewer index files will be produced.</p>
+<p>This is a threshold (in bytes) at which to “cut” index (<strong>pl</strong> meaning <a href="https://en.wikipedia.org/wiki/Inverted_index">postings list</a>) chunks.
+Increasing this produces less but bigger chunks (which take longer to retrieve).</p>
 <h4 id="index-caching-pl_cache_threshold"><a class="header" href="#index-caching-pl_cache_threshold">Index Caching: <strong><code>pl_cache_threshold</code></strong></a></h4>
-<p>Index files that exceed this number will be cached by the search library at initilisation.</p>
-<p>It can be used to configure InfiSearch for response time (over scalability) for some use cases. This is discussed in more detail in <a href="../larger_collections.html">Larger Collections</a>.</p>
+<p>Index chunks that exceed this size (in bytes) are cached by the search library on initilisation.
+It is used to configure InfiSearch for response time (over scalability) for typical use cases.</p>
 <script src="/infisearch/infisearch_assets/search-ui.ascii.bundle.js" type="text/javascript" charset="utf-8"></script>
 <script src="/infisearch/infisearch_assets/mark.min.js" type="text/javascript" charset="utf-8"></script>
 <script>
@@ -527,7 +522,7 @@ if (window.location.search) {
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../search_api.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../language.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -541,7 +536,7 @@ if (window.location.search) {
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../search_api.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../language.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -562,8 +557,8 @@ if (window.location.search) {
         <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="../src/infi-theme.js"></script>
 
 
+    </div>
     </body>
 </html>

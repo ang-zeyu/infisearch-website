@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js infi-theme">
+<html lang="en" class="sidebar-visible no-js navy">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -29,14 +29,14 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="src/infi-theme.css">
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "infi-theme";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -62,7 +62,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('infi-theme')
+            html.classList.remove('navy')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -70,10 +70,12 @@
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -81,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="search_configuration.html" class="active"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="language.html"><strong aria-hidden="true">4.</strong> Language</a></li><li class="chapter-item expanded "><a href="indexer_configuration.html"><strong aria-hidden="true">5.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="indexer/fields.html"><strong aria-hidden="true">5.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="indexer/files.html"><strong aria-hidden="true">5.2.</strong> Files</a></li><li class="chapter-item expanded "><a href="indexer/misc.html"><strong aria-hidden="true">5.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_syntax.html"><strong aria-hidden="true">6.1.</strong> Query Syntax</a></li></ol></li><li class="chapter-item expanded "><a href="larger_collections.html"><strong aria-hidden="true">7.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="linking_to_others.html"><strong aria-hidden="true">8.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="filters.html"><strong aria-hidden="true">9.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="numeric_sorts.html"><strong aria-hidden="true">10.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="search_configuration_renderers.html"><strong aria-hidden="true">11.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="incremental_indexing.html"><strong aria-hidden="true">12.</strong> Incremental Indexing</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">User Guide</li><li class="chapter-item expanded "><a href="getting_started.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="getting_started_mdbook.html"><strong aria-hidden="true">2.1.</strong> mdBook</a></li><li class="chapter-item expanded "><a href="csp.html"><strong aria-hidden="true">2.2.</strong> CSP</a></li></ol></li><li class="chapter-item expanded "><a href="search_configuration.html" class="active"><strong aria-hidden="true">3.</strong> Search UI</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="search_configuration_styling.html"><strong aria-hidden="true">3.1.</strong> Styling</a></li></ol></li><li class="chapter-item expanded "><a href="indexer_configuration.html"><strong aria-hidden="true">4.</strong> Indexer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="indexer/fields.html"><strong aria-hidden="true">4.1.</strong> Fields</a></li><li class="chapter-item expanded "><a href="indexer/files.html"><strong aria-hidden="true">4.2.</strong> Data</a></li><li class="chapter-item expanded "><a href="indexer/misc.html"><strong aria-hidden="true">4.3.</strong> Miscellaneous</a></li></ol></li><li class="chapter-item expanded "><a href="language.html"><strong aria-hidden="true">5.</strong> Language</a></li><li class="chapter-item expanded "><a href="search_api.html"><strong aria-hidden="true">6.</strong> Search API</a></li><li class="chapter-item expanded "><a href="search_syntax.html"><strong aria-hidden="true">7.</strong> Query Syntax</a></li><li class="chapter-item expanded "><a href="larger_collections.html"><strong aria-hidden="true">8.</strong> Larger Collections</a></li><li class="chapter-item expanded affix "><li class="part-title">Guides</li><li class="chapter-item expanded "><a href="linking_to_others.html"><strong aria-hidden="true">9.</strong> Linking to Other Pages</a></li><li class="chapter-item expanded "><a href="filters.html"><strong aria-hidden="true">10.</strong> Creating Filters</a></li><li class="chapter-item expanded "><a href="numeric_sorts.html"><strong aria-hidden="true">11.</strong> Sorting by Numbers & Dates</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced</li><li class="chapter-item expanded "><a href="search_configuration_renderers.html"><strong aria-hidden="true">12.</strong> Altering HTML outputs</a></li><li class="chapter-item expanded "><a href="incremental_indexing.html"><strong aria-hidden="true">13.</strong> Incremental Indexing</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -451,22 +453,22 @@
 <div class="table-wrapper"><table><thead><tr><th>Option</th><th>Default</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>tip</code></td><td><code>true</code></td><td>Shows the advanced search tips icon on the bottom right.</td></tr>
 <tr><td><code>maxSubMatches</code></td><td><code>2</code></td><td>Maximum headings to show for a result preview.</td></tr>
-<tr><td><code>resultsPerPage</code></td><td><code>10</code></td><td>Number of results to load when the ‘load more’ is clicked.</td></tr>
+<tr><td><code>resultsPerPage</code></td><td><code>10</code></td><td>Number of results to load when ‘load more’ is clicked.</td></tr>
 <tr><td><code>useBreadcrumb</code></td><td><code>false</code></td><td>Prefer using the file path as the result preview’s title. This is formatted into a breadcrumb, transformed to Title Case.<br><br>Example: <code>'documentation/userGuide/my_file.html'</code> → <code>Documentation » User Guide » My File</code>.</td></tr>
 </tbody></table>
 </div>
 <h4 id="setting-up-enum-filters-"><a class="header" href="#setting-up-enum-filters-">Setting Up Enum Filters ∀</a></h4>
-<p>Enum <a href="./indexer/fields.html#field-storage">fields</a> you index can be mapped into UI multi-select dropdowns. In this documentation for example (try the search), Mdbook’s section titles (“User Guide”, “Advanced”) are mapped.</p>
+<p>Enum <a href="./indexer/fields.html#field-storage">fields</a> you index can be mapped into UI multi-select dropdowns. In this documentation for example, Mdbook’s section titles “User Guide”, “Advanced” are mapped.</p>
 <p>Setup bindings under <code>uiOptions</code> like so:</p>
 <pre><code class="language-ts">multiSelectFilters: [
   {
-    fieldName: 'partTitle',
-    displayName: 'Section',
-    defaultOptName: 'None'
+    fieldName: 'partTitle',  // name of field definition
+    displayName: 'Section',  // UI header text
+    defaultOptName: 'None',
+    collapsed: true,         // only the first header is initially expanded
   },
 ]
 </code></pre>
-<p>The <code>fieldName</code> corresponds to the <code>name</code> of your <a href="./indexer/fields.html">field</a> definition, while <code>displayName</code> controls the UI header text.</p>
 <p>Documents that do not have an enum value are assigned an internal default enum value. The option text of this enum value to show is specified by <code>defaultOptName</code>.</p>
 <h4 id="setting-up-numeric-filters-and-sort-orders"><a class="header" href="#setting-up-numeric-filters-and-sort-orders">Setting Up Numeric Filters and Sort Orders</a></h4>
 <p>Indexed numeric <a href="./indexer/fields.html#field-storage">fields</a> can be mapped into minimum-maximum filters of <code>&lt;input type=&quot;number|date|datetime-local&quot; /&gt;</code>, or used to create custom sort orders.</p>
@@ -475,15 +477,17 @@
   {
     fieldName: 'pageViewsField',
     displayName: 'Number of Views',
-    type: 'number', // date, datetime-local is also supported
-    gtePlaceholder: 'Min',
-    ltePlaceholder: 'Max',
+    type: 'number' | 'date' | 'datetime-local',
+    // Text above date, datetime-local filters and placeholder text for number filters
+    // Also announced to screenreaders
+    minLabel: 'Min',
+    maxLabel: 'Max',
   }
 ]
 </code></pre>
 <p><em>Sorting by Numbers, Dates</em></p>
 <pre><code class="language-ts">sortFields: {
-  // Map of the name of your numeric field to UI options
+  // Map of the name of your numeric field to names of UI options
   price: {
     asc: 'Price: Low to High',
     desc: 'Price: High to Low',
@@ -492,7 +496,7 @@
 </code></pre>
 <h4 id="manually-showing--hiding-the-fullscreen-ui"><a class="header" href="#manually-showing--hiding-the-fullscreen-ui">Manually Showing / Hiding the Fullscreen UI</a></h4>
 <p>Call the <code>showFullscreen()</code> and <code>hideFullscreen()</code> functions returned by the <code>infisearch.init</code> to programatically show/hide the fullscreen search UI.</p>
-<pre><code class="language-ts">// These methods can be used under `mode=&quot;auto|fullscreen&quot;`
+<pre><code class="language-ts">// These methods can be used under mode=&quot;auto|fullscreen&quot;
 const { showFullscreen, hideFullscreen } = infisearch.init({ ... });
 </code></pre>
 <h4 id="client-side-routing"><a class="header" href="#client-side-routing">Client Side Routing</a></h4>
@@ -501,15 +505,15 @@ const { showFullscreen, hideFullscreen } = infisearch.init({ ... });
   onLinkClick: function (ev) {
     /*
      By default, this function is a thunk.
-     Call ev.preventDefault() and the client-side routing code here.
+     Call ev.preventDefault() and client-side routing code here.
      Access the anchor element using &quot;this&quot;.
     */
   }
 }
 </code></pre>
 <h4 id="changing-the-mobile-device-detection-method"><a class="header" href="#changing-the-mobile-device-detection-method">Changing The Mobile Device Detection Method</a></h4>
-<p>If the client is a “mobile device”, the fullscreen version of the user interface under <code>mode='auto'</code>.
-This check is done through the following media query, which can be overwritten:</p>
+<p>If the client is a “mobile device”, the fullscreen UI is used under <code>mode='auto'</code>.
+The check is done with a media query, which can be overwritten:</p>
 <pre><code class="language-js">uiOptions: {
   // Any function returning a boolean
   isMobileDevice: () =&gt;
@@ -517,30 +521,35 @@ This check is done through the following media query, which can be overwritten:<
 }
 </code></pre>
 <h2 id="search-functionality-options"><a class="header" href="#search-functionality-options">Search Functionality Options</a></h2>
-<p>The options regarding search functionalities itself are rather brief, its defaults are summarised in this snippet:</p>
+<p>The options regarding search functionalities itself are rather brief:</p>
 <pre><code class="language-js">infisearch.init({
     searcherOptions: {
         // URL of output directory generated by the CLI tool
         url: 'http://192.168.10.132:3000/output/',
 
+        // ---------------------------------------------------------------
+        // Optional Parameters
         maxAutoSuffixSearchTerms: 3,
         maxSuffixSearchTerms: 5,
 
         useQueryTermProximity: true,
 
-        // The maximum number of results to retrieve (unlimited if null).
+        // Maximum number of results (unlimited if null).
         resultLimit: null,
 
-        // ---------------------------------------------------------------
+        // ------------------------------
         // Caching Options
-        // Whether to cache **all** the texts storage=[{ &quot;type&quot;: &quot;text&quot; }] fields on initialisation,
-        // to avoid making network requests when generating result previews.
-        // See the chapter on Fields for more information.
+
+        // Caches **all** texts of storage=[{ &quot;type&quot;: &quot;text&quot; }] fields up front,
+        // to avoid network requests when generating result previews.
+        // Discussed in the &quot;Larger Collections&quot; chapter.
         cacheAllFieldStores: undefined,
 
-        // Any index file &gt;= this size requested before will be persistently cached
-        // This option does not affect field stores.
+        // Any index chunk larger than this number of bytes
+        // will be persistently cached once requested.
         plLazyCacheThreshold: 0,
+        // ------------------------------
+
         // ---------------------------------------------------------------
     },
 });
@@ -667,8 +676,8 @@ if (window.location.search) {
         <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="src/infi-theme.js"></script>
 
 
+    </div>
     </body>
 </html>
