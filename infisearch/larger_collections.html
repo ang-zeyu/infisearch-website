@@ -393,7 +393,7 @@
 <div class="table-wrapper"><table><thead><tr><th>Preset</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>small</code></td><td>Generates a monolithic index and field store. Identical to most other client side indexing tools.</td></tr>
 <tr><td><code>medium</code></td><td>Generates an almost-monolithic index but sharded field store. Only required field stores are retrieved for generating result previews.</td></tr>
-<tr><td><code>large</code></td><td>Generates both a sharded index and field store. Only index files that are required for the query are retrieved. Keeps <a href="./language.html#stop-words">stop words</a>. This is the preset used in the demo <a href="https://infi-search.com">here</a>!</td></tr>
+<tr><td><code>large</code></td><td>Generates both a sharded index and field store. Only index files that are required for the query are retrieved. Keeps <a href="./language.html#stop-words">stop words</a>. This is the preset used in the demo <a href="https://ang-zeyu.github.io/infisearch-website">here</a>!</td></tr>
 </tbody></table>
 </div>
 <p>In summary, scaling this tool for larger collections dosen’t come freely, and necessitates fragmenting the index and/or field stores, <strong>retrieving only what’s needed</strong>. This means extra network requests, but to a reasonable degree.</p>
